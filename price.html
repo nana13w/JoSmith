@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body style="background-color: #f6ebf2;">
+    <nav class="navbar navbar-expand-lg navbar-light dark-colour"
+        style="background-color: #f6ebf2; border-bottom: 1px solid #e0e0e0;">
+        <div class="container">
+            <!-- Logo for mobile -->
+            <a class="navbar-brand dark-colour" style="margin-left: 45%;" href="#">
+                <img src="images/JOLogo.png" alt="Jo Smith Photography" height="80">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                aria-controls="offcanvasNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse d-none d-lg-flex justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="price.html">Prices</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testimonials">Testimonials</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="offcanvas offcanvas-end d-lg-none" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel" style="width: 200px;">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 ">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="gallery.html">Gallery</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="price.html">Prices</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#testimonials">Testimonials</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-4 prices-container">
+        <div class="text-center introduction-prices">
+            <h3>📸 Studio Vouchers & Photo Session Packages</h3>
+            <p>Capture the moments that matter with our range of professional studio photo sessions. Whether you're
+                looking for a timeless portrait, family photos, or a stunning personal photo shoot, we've got the
+                perfect package for you.</p>
+        </div>
+        <div class="row">
+            <div class="col-12 mb-4">
+                <div class="card h-100" style="background-color: #fdf7fa;">
+                    <div class="card-body d-flex align-items-center">
+                        <div class="flex-grow-1">
+                            <h5 class="card-title text-center">📸 Photo session with large print</h5>
+                            <img src="images/newborn/white-newborn.webp" alt="feet" class="img-fluid rounded">
+                            <br>
+                            <br>
+                            <p class="card-text">Price: <strong>£80</strong></p>
+                            <p class="card-text">✨ A perfect gift for a loved one or a treat for yourself!</p>
+                            <p class="card-text"><span class="italic">This package includes:</span><br>
+                                📷 One-hour professional studio photo session <br>
+                                👗 Different outfits, styles and backgrounds.<br>
+                                🖼️ Choose your favourite image to be printed at 12 x 8".</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 mb-4">
+                <div class="card h-100" style="background-color: #fdf7fa;">
+                    <div class="card-body d-flex align-items-center">
+                        <div class="flex-grow-1">
+                            <h5 class="card-title text-center">📸 Photo session with extra large print</h5>
+                            <img src="images/pink-girl.png" alt="feet" class="img-fluid rounded">
+                            <br>
+                            <br>
+                            <p class="card-text">Price: <strong>£80</strong></p>
+                            <p class="card-text">✨ A fantastic option for those who want a larger, more dramatic print.</p>
+                            <p class="card-text"><span class="italic">This package includes:</span><br>
+                                📷 One-hour professional studio photo session.<br>
+                                👗 Different outfits, styles and backgrounds.<br>
+                                🖼️ Choose your favourite image to be printed at 18 x 12".</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 mb-4">
+                <div class="card h-100" style="background-color: #fdf7fa;">
+                    <div class="card-body d-flex align-items-center">
+                        <div class="flex-grow-1">
+                            <h5 class="card-title text-center">📸 Photo session with extra large print</h5>
+                            <img src="images/wedding/white-wedding.jpg" alt="white wedding" class="img-fluid rounded">
+                            <br>
+                            <br>
+                            <p class="card-text">Price: <strong>£125</strong></p>
+                            <p class="card-text">✨ For those who want more prints to share or keep.</p>
+                            <p class="card-text"><span class="italic">This package includes:</span><br>
+                                📷 One-hour professional studio photo session.<br>
+                                👗 Different outfits, styles and backgrounds.<br>
+                                🖼️ Choose your favourite image to be printed at 18 x 12" plus 2 others at 12 x 8".</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 mb-4">
+                <div class="card h-100" style="background-color: #fdf7fa;">
+                    <div class="card-body d-flex align-items-center">
+                        <div class="flex-grow-1">
+                            <h5 class="card-title text-center">💻 Digital 10</h5>
+                            <img src="images/nature/white-nature.jpg" alt="winter in Scotland" class="img-fluid rounded">
+                            <br>
+                            <br>
+                            <p class="card-text">Price: <strong>£190</strong></p>
+                            <p class="card-text">✨ For those who prefer the flexibility of digital images, this package
+                                offers high-quality digital downloads.</p>
+                            <p class="card-text"><span class="italic">This package includes:</span><br>
+                                📷 One-hour professional studio photo session.<br>
+                                👗 Different outfits, styles and backgrounds.<br>
+                                💻 Choose your ten favourite images online.<br>
+                                Choose in your own time and in the peace of your own home.<br>
+                                ✨ Your chosen images will be fully retouched and supplied digitally.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 mb-4">
+                <div class="card h-100" style="background-color: #fdf7fa;">
+                    <div class="card-body d-flex align-items-center">
+                        <div class="flex-grow-1">
+                            <h5 class="card-title text-center">💻 Digital 25</h5>
+                            <img src="images/products/white-products.jpg" alt="cream products" class="img-fluid rounded">
+                            <br>
+                            <br>
+                            <p class="card-text">Price: <strong>£250</strong></p>
+                            <p class="card-text">✨ Get even more digital options with this extended package.</p>
+                            <p class="card-text"><span class="italic">This package includes:</span><br>
+                                📷 One-hour professional studio photo session.<br>
+                                👗 Different outfits, styles and backgrounds.<br>
+                                💻 Choose your 25 favourite images online.<br>
+                                Choose in your own time and in the peace of your own home.<br>
+                                ✨ Your chosen images will be fully retouched and supplied digitally.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 mb-4">
+                <div class="card h-100" style="background-color: #fdf7fa;">
+                    <div class="card-body d-flex align-items-center">
+                        <div class="flex-grow-1">
+                            <h5 class="card-title text-center">🖼️ Enhance Your Collection</h5>
+                            <img src="images/family/white-family.jpg" alt="family on white background" class="img-fluid rounded">
+                            <br>
+                            <br>
+                            <p class="card-text">Price: <strong>Contact for Pricing</strong></p>
+                            <p class="card-text">✨ Ideal for those looking to expand their collection, whether you're interested in additional prints, digital photos, or even studio vouchers.</p>
+                            <p class="card-text"><span class="italic">Extras & Vouchers</span><br>
+                                📷 High-quality prints in various sizes.<br>
+                                💻 Digital copies available for download.<br>
+                                🎁 Studio vouchers - Treat yourself or someone special to a professional photo session with a voucher, perfect for birthdays, anniversaries, or any occasion.. <br>
+                                🖼️ Customizable options to suit your needs.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-4 addInfo">
+        <p class="text-center mt-4">🎁 <span class="underlined"><strong>Studio vouchers</strong></span> <br>
+            If you'd like to buy a gift voucher, just contact us and we'll arrange to post one
+            directly to you.</p>
+        </div>
+    </div>
+</body>
+
+</html>
