@@ -3,38 +3,55 @@ body {
     margin: 0;
     padding: 0;
     padding-bottom: 100px;
-    background-color: #fafafa; /* Slightly lighter background color */
+    background-color: #fafafa;
+    /* Slightly lighter background color */
     font-family: 'Aria Unicode', sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: 'Roboto', sans-serif;
     color: #2e1223 !important;
     /* font-weight: bold; */
 }
 
 .navbar-nav .nav-link {
-    font-size: 1rem; /* Adjust the size as needed */
+    font-size: 1rem;
+    /* Adjust the size as needed */
     color: #2e1223 !important;
 }
+
 .dark-colour {
     color: #2e1223;
 }
+
 .btn-primary {
-    background-color: #2e1223 !important; /* Original primary button color */
+    background-color: #2e1223 !important;
+    /* Original primary button color */
     border-color: #2e1223 !important;
 }
+
 .btn-outline-secondary {
-    color: #2e1223 !important; /* Original outline secondary button color */
+    color: #2e1223 !important;
+    /* Original outline secondary button color */
     border-color: #2e1223 !important;
 }
+
 .carousel-caption {
-    margin-bottom: 2rem; /* Adjust this value to move the caption higher */
+    margin-bottom: 2rem;
+    /* Adjust this value to move the caption higher */
 }
+
 .carousel-item img {
-    height: 300px; /* Set a fixed height for small screens */
+    height: 300px;
+    /* Set a fixed height for small screens */
     object-fit: cover;
-    object-position: center top; /* Adjust this to focus on a different part of the image */
+    object-position: center top;
+    /* Adjust this to focus on a different part of the image */
 }
 
 .home-cards {
@@ -42,10 +59,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .carousel-item:nth-child(2) img {
-    object-position: right top; /* Focus on the right top for the newborn image */
+    object-position: right top;
+    /* Focus on the right top for the newborn image */
 }
-
-
 
 .gallery-card-container {
     display: flex;
@@ -59,35 +75,48 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: space-between;
     border-radius: 20px;
     padding: 20px;
-    background-color: #fdf7fa; /* Light background color */
+    background-color: #fdf7fa;
+    /* Light background color */
     border: 1px solid #ccc;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
-    margin-bottom: 20px; /* Add margin between cards */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Add subtle shadow */
+    margin-bottom: 20px;
+    /* Add margin between cards */
 }
 
 .gallery-card:last-child {
-    border-bottom: none; /* Remove border from the last card */
+    border-bottom: none;
+    /* Remove border from the last card */
 }
 
-.gallery-card:nth-child(2), .gallery-card:nth-child(4) {
+.gallery-card:nth-child(2),
+.gallery-card:nth-child(4) {
     flex-direction: row-reverse !important;
 }
 
-.gallery-card:nth-child(1), .gallery-card:nth-child(3), .gallery-card:nth-child(5) {
+.gallery-card:nth-child(1),
+.gallery-card:nth-child(3),
+.gallery-card:nth-child(5) {
     flex-direction: row;
 }
 
 .gallery-card-img {
-    width: 600px;  /* Increase width */
-    height: 400px; /* Set height */
-    object-fit: cover; /* Ensure the image covers the area without distortion */
+    width: 600px;
+    /* Increase width */
+    height: 400px;
+    /* Set height */
+    object-fit: cover;
+    /* Ensure the image covers the area without distortion */
     border-radius: 20px;
 }
 
 .gallery-card-img img {
-    width: 600px;  /* Increase width */
-    height: 400px; /* Set height */
-    border-radius: 20px; /* Add rounded edges */
+    width: 600px;
+    /* Increase width */
+    height: 400px;
+    /* Set height */
+    border-radius: 20px;
+    /* Add rounded edges */
 }
 
 .gallery-card-body {
@@ -97,7 +126,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .gallery-card:first-child {
-    margin-top: 20px; /* Add margin between nav and first card */
+    margin-top: 20px;
+    /* Add margin between nav and first card */
 }
 
 .price-img {
@@ -121,7 +151,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .card-text {
-    font-size: 1.1rem; /* Increase font size for better readability */
+    font-size: 1.1rem;
+    /* Increase font size for better readability */
 }
 
 .prices-container .card-body h5 {
@@ -141,34 +172,29 @@ h1, h2, h3, h4, h5, h6 {
     text-decoration: underline;
 }
 
-
 .card-title {
     margin: 0;
-    font-size: 0.9rem;
+    font-size: 1.1rem;
 }
 
 .card .card-img-top {
-    height: 580px;
+    height: 780px;
     object-fit: cover;
 }
 
-/* Apply a larger height for all cards except the first one */
-.card .card-img-top:nth-child(2),
-.card .card-img-top:nth-child(3),
-.card .card-img-top:nth-child(4),
-.card .card-img-top:nth-child(5) {
-    height: 350px !important; /* Increase this value as needed */
+.col-lg-6:not(:first-child) .card-img-top {
+    height: 350px;
 }
 
 @media (min-width: 576px) {
     .card-title {
-        font-size: 1rem;
+        font-size: 1.2rem;
     }
 }
 
 @media (min-width: 768px) {
     .card-title {
-        font-size: 1.1rem;
+        font-size: 1.3rem;
     }
 }
 
@@ -176,7 +202,7 @@ h1, h2, h3, h4, h5, h6 {
     .card:not(:first-child) .card-img-top {
         height: 600px !important;
     }
-    
+
     .card:not(:first-child) .card-img-top {
         height: 500px !important;
     }
@@ -186,32 +212,44 @@ h1, h2, h3, h4, h5, h6 {
     .carousel-indicators {
         margin-bottom: 2px;
     }
+
     .carousel-caption {
-        backdrop-filter: blur(3px); /* Add blurring effect on sides */
-        max-width: 80%; /* Set maximum width to fit content */
-        margin: 0 auto; /* Center the caption */
-        margin-bottom: 0; /* Set margin-bottom to 0 */
+        backdrop-filter: blur(3px);
+        /* Add blurring effect on sides */
+        max-width: 80%;
+        /* Set maximum width to fit content */
+        margin: 0 auto;
+        /* Center the caption */
+        margin-bottom: 0;
+        /* Set margin-bottom to 0 */
         padding-left: 10px;
-        padding-right: 0; 
+        padding-right: 0;
         padding-top: 10px;
         padding-bottom: 10px;
     }
+
     .carousel-caption h5 {
-        font-size: 1rem !important; /* Smaller font size for the heading on small screens */
+        font-size: 1rem !important;
+        /* Smaller font size for the heading on small screens */
         margin-bottom: 4px;
     }
+
     .carousel-caption p {
-        font-size: 0.8rem !important; /* Smaller font size for the paragraph on small screens */
+        font-size: 0.8rem !important;
+        /* Smaller font size for the paragraph on small screens */
         margin-bottom: 4px;
     }
+
     .btn {
-        font-size: 0.8rem; /* Smaller font size for buttons on small screens */
-        padding: 0.4rem 0.8rem; /* Adjust padding for smaller buttons */
+        font-size: 0.8rem;
+        /* Smaller font size for buttons on small screens */
+        padding: 0.4rem 0.8rem;
+        /* Adjust padding for smaller buttons */
     }
+
     .navbar-brand img {
-        margin-left: -25px;
-        margin-right: auto;
         display: block;
+        margin: 0;
     }
 
     .card {
@@ -222,42 +260,42 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (min-width: 992px) {
     .carousel-item img {
-        height: 600px; /* Increased height for large screens */
+        height: 600px;
+        /* Increased height for large screens */
         object-fit: cover;
-        object-position: center; /* Default position for large screens */
+        object-position: center;
+        /* Default position for large screens */
     }
-    .carousel-item:nth-child(2) img, .carousel-item:nth-child(3) img {
-        object-position: center; /* Remove specific positioning for large screens */
+
+    .carousel-item:nth-child(2) img,
+    .carousel-item:nth-child(3) img {
+        object-position: center;
+        /* Remove specific positioning for large screens */
     }
+
     .carousel-caption h5 {
-        font-size: 1rem; /* Smaller font size for the heading on large screens */
+        font-size: 1rem;
+        /* Smaller font size for the heading on large screens */
     }
+
     .carousel-caption p {
-        font-size: 0.8rem; /* Smaller font size for the paragraph on large screens */
+        font-size: 0.8rem;
+        /* Smaller font size for the paragraph on large screens */
     }
+
     .prices-container .row {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
     }
+
     .prices-container .col-12 {
         flex: 0 0 32%;
         max-width: 32%;
     }
-    
- .card-title {
-        font-size: 0.8rem;
-    }
 
-
-    .col-lg-6:not(:first-child) .card-img-top {
-        height: 250px;
-    }
-}
-
-@media (min-width: 992px) and (max-width: 1999px) {
-    .card {
-        height: 695px;
+    .card-title {
+        font-size: 1rem;
     }
 }
 
@@ -268,5 +306,60 @@ h1, h2, h3, h4, h5, h6 {
 
     .card {
         height: auto;
+    }
+}
+
+@media (max-width: 575px) {
+
+    .gallery-section .card {
+        height: auto;
+    }
+
+    .card {
+        height: 400px;
+        margin-left: 40px;
+        margin-right: 40px;
+    }
+
+    .card:not(:first-child) .card-img-top {
+        height: 600px !important;
+    }
+
+    .card:not(:first-child) .card-img-top {
+        height: 500px !important;
+    }
+
+
+    .card .card-img-top {
+        height: 780px;
+
+    }
+}
+
+/* Gallery card styles */
+.card {
+    background-color: #fdf7fa;
+}
+
+/* Ensure images maintain aspect ratio */
+.object-fit-cover {
+    object-fit: cover;
+    height: 400px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+    .object-fit-cover {
+        height: 300px;
+    }
+
+    .card-body {
+        padding: 2rem 1rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .card-body {
+        padding: 3rem 2rem;
     }
 }

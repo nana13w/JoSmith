@@ -1,22 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Website</title>
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
+
 <body style="background-color: #f6ebf2;">
-    <nav class="navbar navbar-expand-lg navbar-light dark-colour" style="background-color: #f6ebf2; border-bottom: 1px solid #e0e0e0;"> 
+    <nav class="navbar navbar-expand-lg navbar-light dark-colour shadow-sm"
+        style="background-color: #f6ebf2; border-bottom: 1px solid #e0e0e0;">
         <div class="container">
             <!-- Logo for mobile -->
-            <a class="navbar-brand dark-colour" style="margin-left: 45%;" href="#">
+            <a class="navbar-brand dark-colour" href="#">
                 <img src="images/JOLogo.png" alt="Jo Smith Photography" height="80">
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                aria-controls="offcanvasNavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse d-none d-lg-flex justify-content-end" id="navbarNav">
@@ -38,7 +43,8 @@
                     </li>
                 </ul>
             </div>
-            <div class="offcanvas offcanvas-end d-lg-none" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel" style="width: 200px;">
+            <div class="offcanvas offcanvas-end d-lg-none" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel" style="width: 200px;">
                 <div class="offcanvas-header">
                     <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -69,78 +75,86 @@
 
         <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
+                    aria-label="Slide 4"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4"
+                    aria-label="Slide 5"></button>
             </div>
             <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img src="images/wedding/heart.png" class="d-block w-100" alt="heart">
-                <div class="carousel-caption d-md-block text-start">
-                  <h5 class="dark-colour" style="font-size: 2rem; text-transform: uppercase;">Wedding</h5>
-                  <p class="dark-colour" style="font-size: 1.2rem;">Intuitive, spontaneous, and experienced captures.</p>
-                  <a href="#" class="btn btn-primary me-2">Book Session</a>
-                  <a href="#" class="btn btn-outline-secondary">Learn More</a>
+                <div class="carousel-item active">
+                    <img src="images/wedding/heart.png" class="d-block w-100" alt="heart">
+                    <div class="carousel-caption d-md-block text-start">
+                        <h5 class="dark-colour" style="font-size: 2rem; text-transform: uppercase;">Wedding</h5>
+                        <p class="dark-colour" style="font-size: 1.2rem;">Intuitive, spontaneous, and experienced
+                            captures.</p>
+                        <a href="#" class="btn btn-primary me-2">Book Session</a>
+                        <a href="#" class="btn btn-outline-secondary">Learn More</a>
+                    </div>
                 </div>
-              </div>
-              <div class="carousel-item">
-                <img src="images/newborn/baby2.png" class="d-block w-100" alt="newborn">
-                <div class="carousel-caption d-md-block text-start">
-                  <h5 class="dark-colour" style="font-size: 2rem; text-transform: uppercase;">Newborn</h5>
-                  <p class="dark-colour" style="font-size: 1.2rem;">Timeless portraits of your little ones.</p>
-                  <a href="#" class="btn btn-primary me-2">Book Session</a>
-                  <a href="#" class="btn btn-outline-secondary">Learn More</a>
+                <div class="carousel-item">
+                    <img src="images/newborn/baby2.png" class="d-block w-100" alt="newborn">
+                    <div class="carousel-caption d-md-block text-start">
+                        <h5 class="dark-colour" style="font-size: 2rem; text-transform: uppercase;">Newborn</h5>
+                        <p class="dark-colour" style="font-size: 1.2rem;">Timeless portraits of your little ones.</p>
+                        <a href="#" class="btn btn-primary me-2">Book Session</a>
+                        <a href="#" class="btn btn-outline-secondary">Learn More</a>
+                    </div>
                 </div>
-              </div>
-              <div class="carousel-item">
-                <img src="images/family/family.png" class="d-block w-100" alt="family of three">
-                <div class="carousel-caption d-md-block text-start">
-                  <h5 class="dark-colour" style="font-size: 2rem; text-transform: uppercase;">Family</h5>
-                  <p class="dark-colour" style="font-size: 1.2rem;">Capture your family's unique beauty.</p>
-                  <a href="#" class="btn btn-primary me-2">Book Session</a>
-                  <a href="#" class="btn btn-outline-secondary">Learn More</a>
+                <div class="carousel-item">
+                    <img src="images/family/family.png" class="d-block w-100" alt="family of three">
+                    <div class="carousel-caption d-md-block text-start">
+                        <h5 class="dark-colour" style="font-size: 2rem; text-transform: uppercase;">Family</h5>
+                        <p class="dark-colour" style="font-size: 1.2rem;">Capture your family's unique beauty.</p>
+                        <a href="#" class="btn btn-primary me-2">Book Session</a>
+                        <a href="#" class="btn btn-outline-secondary">Learn More</a>
+                    </div>
                 </div>
-              </div>
-              <div class="carousel-item">
-                <img src="images/nature/ocean-rocks.png" class="d-block w-100" alt="ocean and rocks">
-                <div class="carousel-caption d-md-block text-start">
-                  <h5 class="dark-colour" style="font-size: 2rem; text-transform: uppercase;">Nature</h5>
-                  <p class="dark-colour" style="font-size: 1.2rem;">Scotland's landscapes through Jo's lens.</p>
-                  <a href="#" class="btn btn-primary me-2">Book Session</a>
-                  <a href="#" class="btn btn-outline-secondary">Learn More</a>
+                <div class="carousel-item">
+                    <img src="images/nature/ocean-rocks.png" class="d-block w-100" alt="ocean and rocks">
+                    <div class="carousel-caption d-md-block text-start">
+                        <h5 class="dark-colour" style="font-size: 2rem; text-transform: uppercase;">Nature</h5>
+                        <p class="dark-colour" style="font-size: 1.2rem;">Scotland's landscapes through Jo's lens.</p>
+                        <a href="#" class="btn btn-primary me-2">Book Session</a>
+                        <a href="#" class="btn btn-outline-secondary">Learn More</a>
+                    </div>
                 </div>
-              </div>
-              <div class="carousel-item">
-                <img src="images/products/perfume.png" class="d-block w-100" alt="perfume">
-                <div class="carousel-caption d-md-block text-start">
-                  <h5 class="dark-colour" style="font-size: 2rem; text-transform: uppercase;">Commercial</h5>
-                  <p class="dark-colour" style="font-size: 1.2rem;">Stunning visuals for your products.</p>
-                  <a href="#" class="btn btn-primary me-2">Book Session</a>
-                  <a href="#" class="btn btn-outline-secondary">Learn More</a>
+                <div class="carousel-item">
+                    <img src="images/products/perfume.png" class="d-block w-100" alt="perfume">
+                    <div class="carousel-caption d-md-block text-start">
+                        <h5 class="dark-colour" style="font-size: 2rem; text-transform: uppercase;">Commercial</h5>
+                        <p class="dark-colour" style="font-size: 1.2rem;">Stunning visuals for your products.</p>
+                        <a href="#" class="btn btn-primary me-2">Book Session</a>
+                        <a href="#" class="btn btn-outline-secondary">Learn More</a>
+                    </div>
                 </div>
-              </div>
 
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
             </button>
-          </div>
+        </div>
 
     </div>
 
 
-    <div class="container my-4">
+    <div class="container my-5">
         <div class="row g-4">
             <!-- Large card on the left -->
             <div class="col-12 col-lg-6">
-                <div class="card border-0 shadow-sm">
+                <div class="card border-0 shadow-sm h-100">
                     <img src="images/wedding/weding-vertical.png" class="card-img-top" alt="Wedding">
                     <div class="card-body text-center">
                         <h5 class="card-title text-uppercase">Wedding Photography</h5>
@@ -150,23 +164,23 @@
             <!-- Grid of smaller cards on the right -->
             <div class="col-12 col-lg-6">
                 <div class="row g-4">
-                    <div class="col-6">
+                    <div class="col-12 col-sm-6">
                         <div class="card border-0 shadow-sm h-100">
-                            <img src="images/newborn/newborn-vertical.png" class="card-img-top" alt="Newborn" ">
+                            <img src="images/newborn/newborn-vertical.png" class="card-img-top" alt="Newborn">
                             <div class="card-body text-center">
                                 <h5 class="card-title text-uppercase">Newborn Photography</h5>
                             </div>
                         </div>
                     </div>
-                    <div class="col-6">
+                    <div class="col-12 col-sm-6">
                         <div class="card border-0 shadow-sm h-100">
-                            <img src="images/family/family-vertical.png" class="card-img-top" alt="Family" >
+                            <img src="images/family/family-vertical.png" class="card-img-top" alt="Family">
                             <div class="card-body text-center">
                                 <h5 class="card-title text-uppercase">Family Photography</h5>
                             </div>
                         </div>
                     </div>
-                    <div class="col-6">
+                    <div class="col-12 col-sm-6">
                         <div class="card border-0 shadow-sm h-100">
                             <img src="images/nature/nature-vertical.png" class="card-img-top" alt="Nature">
                             <div class="card-body text-center">
@@ -174,7 +188,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-6">
+                    <div class="col-12 col-sm-6">
                         <div class="card border-0 shadow-sm h-100">
                             <img src="images/products/product-vertical.jpg" class="card-img-top" alt="Products">
                             <div class="card-body text-center">
@@ -186,23 +200,15 @@
             </div>
         </div>
     </div>
-        <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const images = document.querySelectorAll('.carousel-item img');
-            images.forEach(img => {
-                const src = img.getAttribute('src');
-                const smallSrc = src.replace(/(\.[a-z]+)$/, '-small$1');
-                if (window.innerWidth < 992) {
-                    img.setAttribute('src', smallSrc);
-                }
-            });
-        });
-    </script>
 
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
-        <script src="js/script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <script src="js/script.js"></script>
 
 </body>
-</html> 
+
+</html>
