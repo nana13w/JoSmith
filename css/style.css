@@ -44,171 +44,8 @@ h1, h2, h3, h4, h5, h6 {
 .carousel-item:nth-child(2) img {
     object-position: right top; /* Focus on the right top for the newborn image */
 }
-@media (min-width: 992px) {
-    .carousel-item img {
-        height: 600px; /* Increased height for large screens */
-        object-fit: cover;
-        object-position: center; /* Default position for large screens */
-    }
-    .carousel-item:nth-child(2) img, .carousel-item:nth-child(3) img {
-        object-position: center; /* Remove specific positioning for large screens */
-    }
-    .carousel-caption h5 {
-        font-size: 1rem; /* Smaller font size for the heading on large screens */
-    }
-    .carousel-caption p {
-        font-size: 0.8rem; /* Smaller font size for the paragraph on large screens */
-    }
-    .prices-container .row {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
-    .prices-container .col-12 {
-        flex: 0 0 32%;
-        max-width: 32%;
-    }
-}
-@media (max-width: 991px) {
-    .carousel-indicators {
-        margin-bottom: 2px; /* Move the indicators lower on small screens */
-    }
-    .carousel-caption {
-        backdrop-filter: blur(3px); /* Add blurring effect on sides */
-        max-width: 80%; /* Set maximum width to fit content */
-        margin: 0 auto; /* Center the caption */
-        margin-bottom: 0; /* Set margin-bottom to 0 */
-        padding-left: 10px;
-        padding-right: 0; 
-        padding-top: 10px;
-        padding-bottom: 10px;
-    }
-    .carousel-caption h5 {
-        font-size: 1rem !important; /* Smaller font size for the heading on small screens */
-        margin-bottom: 4px;
-    }
-    .carousel-caption p {
-        font-size: 0.8rem !important; /* Smaller font size for the paragraph on small screens */
-        margin-bottom: 4px;
-    }
-    .btn {
-        font-size: 0.8rem; /* Smaller font size for buttons on small screens */
-        padding: 0.4rem 0.8rem; /* Adjust padding for smaller buttons */
-    }
-    .navbar-brand img {
-        margin-left: -25px;
-        margin-right: auto;
-        display: block;
-    }
-    .home-cards .card {
-        height: 570px !important;
-        margin-bottom: 10px; /* Add margin between cards on small screens */
-    }
-
-    .card img {
-        height: 400px;
-        width: 90%;  /* Adjust width to look good on all screens */
-        max-width: 400px; /* Prevent it from being too wide */
-        margin: 0 auto;
-        padding-top: 20px;
-    }
-
-    .card img:nth-child(1) {
-        height: 530px !important;
-    }
-    
-    .card-container {
-        display: flex; 
-        flex-direction: column;  /* Stack cards in a single column */
-        align-items: center;  /* Center-align the cards */
-        justify-content: center;
-        gap: 20px;  /* Adjust spacing between cards */
-    }
-
-}
-@media (min-width: 992px) {
-    .card-container {
-        display: grid;
-        grid-template-columns: 2fr 1fr 1fr;
-        grid-template-rows: repeat(2, 1fr);
-        gap: 20px;
-    }
-    .card-container .card:nth-child(1) {
-        grid-row: span 2;
-    }
-
-    .card {
-        border-radius: 20px; /* Rounds the corners of the cards */
-        margin-bottom: 20px; /* Add margin between cards */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
-        height: 435px !important;
-    }
-    .card-img-top {
-        height: 400px !important; /* Further reduce the image height in the cards */
-        object-fit: cover; /* Ensure the image covers the area without distortion */
-    }
-
-    .card:nth-child(1) {
-        height: 930px !important;
-    }
-    
-    .card:nth-child(1) .card-img-top {
-        height: 930px !important; /* Increase the height of the wedding image */
-    }
-    
-}
-
-@media (max-width: 1200px) {
-    
-    .home-cards .card {
-        margin-left: 0px !important;
-        margin-right: 0px !important;
-    }
-
-    
-}
 
 
-.card {
-    border-radius: 20px; /* Rounds the corners of the cards */
-    margin-bottom: 20px; /* Add margin between cards */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
-    height: 335px;
-}
-.card-img-top {
-    height: 295px; /* Further reduce the image height in the cards */
-    object-fit: cover; /* Ensure the image covers the area without distortion */
-}
-
-.card:nth-child(1) {
-    height: 740px;
-}
-
-.card:nth-child(1) .card-img-top {
-    height: 700px; /* Increase the height of the wedding image */
-}
-
-.card-body h5 {
-    padding: 2px !important;
-    font-size: 1.3rem;
-}
-
-.index-card {
-    margin: 20px !important;
-}
-
-@media (max-width: 991px) {
-    .card { 
-        height: 520px !important;
-    }
-    .card:nth-child(4) {
-        height: 490px !important;
-    }
-}
-
-.index-card .card-body {
-    padding: 5px !important;
-}
 
 .gallery-card-container {
     display: flex;
@@ -287,10 +124,6 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 1.1rem; /* Increase font size for better readability */
 }
 
-.card-title {
-    font-size: 1.3rem; /* Increase font size for card titles */
-}
-
 .prices-container .card-body h5 {
     padding-top: 5px !important;
     padding-bottom: 10px !important;
@@ -308,27 +141,132 @@ h1, h2, h3, h4, h5, h6 {
     text-decoration: underline;
 }
 
-@media (min-width: 768px) and (max-width: 1400px) {
+
+.card-title {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.card .card-img-top {
+    height: 580px;
+    object-fit: cover;
+}
+
+/* Apply a larger height for all cards except the first one */
+.card .card-img-top:nth-child(2),
+.card .card-img-top:nth-child(3),
+.card .card-img-top:nth-child(4),
+.card .card-img-top:nth-child(5) {
+    height: 350px !important; /* Increase this value as needed */
+}
+
+@media (min-width: 576px) {
+    .card-title {
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .card-title {
+        font-size: 1.1rem;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .card:not(:first-child) .card-img-top {
+        height: 600px !important;
+    }
+    
+    .card:not(:first-child) .card-img-top {
+        height: 500px !important;
+    }
+}
+
+@media (max-width: 991px) {
+    .carousel-indicators {
+        margin-bottom: 2px;
+    }
+    .carousel-caption {
+        backdrop-filter: blur(3px); /* Add blurring effect on sides */
+        max-width: 80%; /* Set maximum width to fit content */
+        margin: 0 auto; /* Center the caption */
+        margin-bottom: 0; /* Set margin-bottom to 0 */
+        padding-left: 10px;
+        padding-right: 0; 
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .carousel-caption h5 {
+        font-size: 1rem !important; /* Smaller font size for the heading on small screens */
+        margin-bottom: 4px;
+    }
+    .carousel-caption p {
+        font-size: 0.8rem !important; /* Smaller font size for the paragraph on small screens */
+        margin-bottom: 4px;
+    }
+    .btn {
+        font-size: 0.8rem; /* Smaller font size for buttons on small screens */
+        padding: 0.4rem 0.8rem; /* Adjust padding for smaller buttons */
+    }
+    .navbar-brand img {
+        margin-left: -25px;
+        margin-right: auto;
+        display: block;
+    }
 
     .card {
-        margin-bottom: 20px !important;
+        height: auto;
     }
 
-    .card:nth-child(2), .card:nth-child(3), .card:nth-child(4), .card:nth-child(5) {
-        width: 90%; /* or use a percentage like 48% for two columns */
-        max-width: 400px; /* Adjust as needed */
+}
+
+@media (min-width: 992px) {
+    .carousel-item img {
+        height: 600px; /* Increased height for large screens */
+        object-fit: cover;
+        object-position: center; /* Default position for large screens */
+    }
+    .carousel-item:nth-child(2) img, .carousel-item:nth-child(3) img {
+        object-position: center; /* Remove specific positioning for large screens */
+    }
+    .carousel-caption h5 {
+        font-size: 1rem; /* Smaller font size for the heading on large screens */
+    }
+    .carousel-caption p {
+        font-size: 0.8rem; /* Smaller font size for the paragraph on large screens */
+    }
+    .prices-container .row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .prices-container .col-12 {
+        flex: 0 0 32%;
+        max-width: 32%;
+    }
+    
+ .card-title {
+        font-size: 0.8rem;
     }
 
-    .card:nth-child(1) {
-        height: 933px !important;
-        width: 58% !important;
+
+    .col-lg-6:not(:first-child) .card-img-top {
+        height: 250px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1999px) {
+    .card {
+        height: 695px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .col-lg-6 {
+        font-size: 1rem;
     }
 
-    .card:nth-child(1) .card-img-top img{
-        height: 890px !important; /* Increase the height of the wedding image */
-    }
-
-    .card-body h5 {
-        height: 0;
+    .card {
+        height: auto;
     }
 }
