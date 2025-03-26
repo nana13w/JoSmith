@@ -20,7 +20,7 @@ h6 {
 }
 
 .navbar-nav .nav-link {
-    font-size: 1rem;
+    font-size: 1.3em;
     /* Adjust the size as needed */
     color: #2e1223 !important;
 }
@@ -46,12 +46,39 @@ h6 {
     /* Adjust this value to move the caption higher */
 }
 
+.carousel {
+    position: relative;
+}
+
+.carousel::before,
+.carousel::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 50px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.carousel::before {
+    top: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.3), transparent);
+}
+
+.carousel::after {
+    bottom: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.3), transparent);
+}
+
+.carousel-inner {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
 .carousel-item img {
     height: 300px;
-    /* Set a fixed height for small screens */
     object-fit: cover;
     object-position: center top;
-    /* Adjust this to focus on a different part of the image */
 }
 
 .home-cards {
@@ -170,6 +197,16 @@ h6 {
 
 .underlined {
     text-decoration: underline;
+}
+
+.wedding-gallery .card-img-top {
+    width: 100%;
+    height: 250px;  /* Reduced height */
+    object-fit: cover;
+}
+
+.card {
+    height: auto !important;
 }
 
 .card-title {
@@ -347,14 +384,27 @@ h6 {
     height: 400px;
 }
 
+/* Ensure images maintain aspect ratio */
+.wedding-gallery .object-fit-cover {
+    object-fit: cover;
+    height: 250px;  /* Reduced from 400px */
+}
+
 /* Responsive adjustments */
 @media (max-width: 767px) {
     .object-fit-cover {
         height: 300px;
     }
+    
+    .wedding-gallery .object-fit-cover {
+        height: 200px;  /* Reduced from 300px */
+    }
 
     .card-body {
         padding: 2rem 1rem;
+    }
+    .wedding-gallery .card-body {
+        padding: 1rem;
     }
 }
 
@@ -362,4 +412,122 @@ h6 {
     .card-body {
         padding: 3rem 2rem;
     }
+    .wedding-gallery .card-body {
+        padding: 1.5rem;
+    }
+}
+
+.wedding-gallery {
+    margin: 2rem auto;
+    padding: 0;
+    max-width: 100%;
+}
+
+.wedding-gallery .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+    padding: 10px;
+}
+
+.wedding-gallery .gallery-item {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.wedding-gallery .gallery-item.hidden {
+    display: none;
+    opacity: 0;
+}
+
+.wedding-gallery .gallery-item.horizontal {
+    grid-column: span 2;
+}
+
+.wedding-gallery .gallery-item.vertical {
+    grid-column: span 1;
+}
+
+.wedding-gallery .gallery-item.large {
+    grid-column: span 3;
+}
+
+.wedding-gallery .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-color: #f6ebf2;
+    transition: transform 0.3s ease;
+}
+
+.wedding-gallery .gallery-item:hover img {
+    transform: scale(1.02);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .wedding-gallery .gallery-grid {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+
+@media (max-width: 991px) {
+    .wedding-gallery .gallery-grid {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .wedding-gallery .gallery-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 8px;
+        padding: 8px;
+    }
+    .wedding-gallery .gallery-item.large {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 576px) {
+    .wedding-gallery .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 6px;
+        padding: 6px;
+    }
+    .wedding-gallery .gallery-item {
+        grid-column: span 2 !important;
+        height: 300px;
+    }
+}
+
+.wedding-gallery .btn-outline-dark {
+    border-color: #2e1223;
+    color: #2e1223;
+    transition: all 0.3s ease;
+    margin: 2rem 0;
+    padding: 0.75rem 2rem;
+    font-size: 1.1rem;
+}
+
+.wedding-gallery .btn-outline-dark:hover {
+    background-color: #2e1223;
+    color: #f6ebf2;
+    border-color: #2e1223;
+    transform: translateY(-2px);
+}
+
+.wedding-gallery .btn-outline-dark:focus {
+    box-shadow: none;
+    border-color: #2e1223;
+    color: #2e1223;
+}
+
+.wedding-gallery .btn-outline-dark:active {
+    background-color: #2e1223;
+    color: #f6ebf2;
+    border-color: #2e1223;
 }
