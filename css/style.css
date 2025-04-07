@@ -48,6 +48,8 @@ h6 {
 
 .carousel {
     position: relative;
+    overflow: hidden;
+    background-color: #000;
 }
 
 .carousel::before,
@@ -72,7 +74,73 @@ h6 {
 }
 
 .carousel-inner {
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background-color: #000;
+}
+
+.carousel-item {
+    position: relative;
+    display: none;
+    float: left;
+    width: 100%;
+    margin-right: -100%;
+    backface-visibility: hidden;
+    transition: transform .6s ease-in-out;
+    background-color: #000;
+}
+
+.carousel-item.active,
+.carousel-item-next,
+.carousel-item-prev {
+    display: block;
+    background-color: #000;
+}
+
+.carousel-item-next:not(.carousel-item-start),
+.active.carousel-item-end {
+    transform: translateX(100%);
+    background-color: #000;
+}
+
+.carousel-item-prev:not(.carousel-item-end),
+.active.carousel-item-start {
+    transform: translateX(-100%);
+    background-color: #000;
+}
+
+.carousel-item-next.carousel-item-start,
+.carousel-item-prev.carousel-item-end {
+    transform: translateX(0);
+    background-color: #000;
+}
+
+.carousel-fade .carousel-item {
+    opacity: 0;
+    transition: opacity .6s ease-in-out;
+    background-color: #000;
+}
+
+.carousel-fade .carousel-item.active,
+.carousel-fade .carousel-item-next.carousel-item-start,
+.carousel-fade .carousel-item-prev.carousel-item-end {
+    opacity: 1;
+    background-color: #000;
+}
+
+.carousel-fade .carousel-item-next,
+.carousel-fade .carousel-item-prev,
+.carousel-fade .carousel-item.active {
+    opacity: 0;
+    background-color: #000;
+}
+
+.carousel-fade .carousel-item-next.carousel-item-start,
+.carousel-fade .carousel-item-prev.carousel-item-end,
+.carousel-fade .carousel-item.active {
+    opacity: 1;
+    background-color: #000;
 }
 
 .carousel-item img {
@@ -83,6 +151,68 @@ h6 {
 
 .home-cards {
     margin-top: 50px;
+}
+
+.home-cards .card {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.card-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    height: 100%;
+}
+
+.card-link:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+.card-link .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-link:hover .card {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
+}
+
+.card-link:hover .card-img-top {
+    transform: scale(1.05);
+}
+
+/* Ensure the card takes full height of its container */
+.card-link .card {
+    height: 100%;
+}
+
+/* Ensure the image container maintains aspect ratio */
+.card-link .card-img-top {
+    height: 350px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+/* Mobile adjustments */
+@media (max-width: 575px) {
+    .card-link .card-img-top {
+        height: 350px !important;
+    }
+}
+
+.home-cards .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.home-cards .card:hover .card-img-top {
+    transform: scale(1.02);
+}
+
+.home-cards .card .card-img-top {
+    transition: transform 0.3s ease;
 }
 
 .carousel-item:nth-child(2) img {
@@ -227,6 +357,14 @@ h6 {
     .card-title {
         font-size: 1.2rem;
     }
+    
+    .card .card-img-top {
+        height: 780px;
+    }
+    
+    .col-lg-6:not(:first-child) .card-img-top {
+        height: 350px;
+    }
 }
 
 @media (min-width: 768px) {
@@ -351,26 +489,37 @@ h6 {
     .gallery-section .card {
         height: auto;
     }
-
-    .card {
-        height: 400px;
-        margin-left: 40px;
-        margin-right: 40px;
+    .home-cards .card .card-img-top {
+        height: 350px !important;
     }
-
-    .card:not(:first-child) .card-img-top {
-        height: 600px !important;
+    
+    .col-lg-6:not(:first-child) .card-img-top {
+        height: 350px !important;
     }
-
-    .card:not(:first-child) .card-img-top {
-        height: 500px !important;
-    }
-
-
-    .card .card-img-top {
-        height: 780px;
-
-    }
+        /* Reduce font sizes for gallery and price cards on mobile */
+        .gallery-card-body h3 {
+            font-size: 1.2rem;
+        }
+    
+        .gallery-card-body p {
+            font-size: 0.9rem;
+        }
+    
+        .prices-container .card-title {
+            font-size: 1rem;
+        }
+    
+        .prices-container .card-text {
+            font-size: 0.9rem;
+        }
+    
+        .prices-container .card-body h5 {
+            font-size: 0.9rem;
+        }
+    
+        .introduction-prices h3 {
+            font-size: 1.5rem;
+        }
 }
 
 /* Gallery card styles */
@@ -530,4 +679,122 @@ h6 {
     background-color: #2e1223;
     color: #f6ebf2;
     border-color: #2e1223;
+}
+
+/* Circular Navigation Cards */
+.circle-card {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #2e1223;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+}
+
+.circle-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(246, 235, 242, 0.8), rgba(255, 255, 255, 0.8));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.circle-card:hover::before {
+    opacity: 1;
+}
+
+.circle-content {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+    z-index: 1;
+    display: inline-block;
+    padding: 0;
+    line-height: 1;
+    max-width: 90%;
+}
+
+.circle-content span {
+    display: inline-block;
+    padding: 2px 8px;
+    color: #2e1223;
+    text-shadow: 
+        -1px -1px 0 #fff,
+        1px -1px 0 #fff,
+        -1px 1px 0 #fff,
+        1px 1px 0 #fff;
+}
+
+.circle-card:hover .circle-content span {
+    text-shadow: 
+        -1px -1px 0 #fff,
+        1px -1px 0 #fff,
+        -1px 1px 0 #fff,
+        1px 1px 0 #fff,
+        0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+/* Specific circle card styles */
+.wedding-circle {
+    background-image: url('../dist/images/wedding/wedding_rings.jpg');
+    background-position: center;
+}
+
+.newborn-circle {
+    background-image: url('../dist/images/newborn/white-newborn.webp');
+    background-position: center;
+}
+
+.family-circle {
+    background-image: url('../dist/images/family/family_outside_house2.jpg');
+    background-position: center;
+}
+
+.nature-circle {
+    background-image: url('../dist/images/nature/white-nature.jpg');
+    background-position: left bottom;
+}
+
+.commercial-circle {
+    background-image: url('../dist/images/products/watch.jpg');
+    background-position: center;
+}
+
+.commercial-circle .circle-content {
+    font-size: 0.9rem;
+}
+
+@media (max-width: 575px) {
+    .circle-card {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .circle-content {
+        font-size: 1rem;
+        max-width: 85%;
+    }
+
+    .commercial-circle .circle-content {
+        font-size: 0.8rem;
+    }
+}
+
+/* Remove all custom carousel arrow styles */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-image: var(--bs-carousel-control-prev-icon-bg);
 }
