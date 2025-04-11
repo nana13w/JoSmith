@@ -84,4 +84,73 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+
+    // Modal functionality
+    const modal = document.querySelector("#bookSessionModal");
+    const trigger = document.querySelector("#bookSessionTrigger");
+    const closeButton = document.querySelector(".close-button");
+
+    if (!modal || !trigger || !closeButton) {
+        console.error("Modal elements not found");
+        return;
+    }
+
+    // Toggle modal visibility
+    const toggleModal = () => {
+        modal.classList.toggle("show-modal");
+    };
+
+    // Close modal when clicking outside
+    const windowOnClick = (event) => {
+        if (event.target === modal) {
+            toggleModal();
+        }
+    };
+
+    // Event listeners for modal
+    trigger.addEventListener("click", toggleModal);
+    closeButton.addEventListener("click", toggleModal);
+    window.addEventListener("click", windowOnClick);
+
+    // Form validation for all forms with 'needs-validation' class
+    (function () {
+        'use strict'
+        var forms = document.querySelectorAll('.needs-validation')
+        Array.prototype.slice.call(forms)
+            .forEach(function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    } else {
+                        event.preventDefault();
+                        // Get form data
+                        const formData = {
+                            firstName: form.querySelector('[id$="FirstName"]').value,
+                            lastName: form.querySelector('[id$="LastName"]').value,
+                            phone: form.querySelector('[id$="Phone"]').value,
+                            email: form.querySelector('[id$="Email"]').value,
+                            package: form.querySelector('[id$="Package"]')?.value || '',
+                            message: form.querySelector('[id$="Message"]').value
+                        };
+                        
+                        // Log form submission (replace with your actual form submission logic)
+                        console.log("Form submitted:", formData);
+                        
+                        // Reset form
+                        form.reset();
+                        form.classList.remove('was-validated');
+                        
+                        // Show success message
+                        alert("Thank you for your message! We'll contact you soon.");
+                        
+                        // If this is the booking form, close the modal
+                        if (form.id === 'bookingForm') {
+                            modal.classList.remove('show-modal');
+                        }
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            });
+    })();
 });

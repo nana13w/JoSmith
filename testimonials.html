@@ -297,11 +297,73 @@
         </div>
     </div>
 
-    <footer class="footer mt-5" style="background-color: #f6ebf2; border-top: 1px solid #e0e0e0; box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.05);">
+    <!-- Floating Book Session Button -->
+    <button id="bookSessionTrigger" class="floating-book-btn">
+        <i class="fas fa-camera"></i>
+        Contact for Booking
+    </button>
+
+    <!-- Book Session Modal -->
+    <div class="modal" id="bookSessionModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Contact for Booking</h2>
+                <button class="close-button">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="bookingForm" class="needs-validation" novalidate>
+                    <div class="mb-3">
+                        <label for="bookingFirstName" class="form-label">First Name *</label>
+                        <input type="text" class="form-control" id="bookingFirstName" required>
+                        <div class="invalid-feedback">Please enter your first name.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="bookingLastName" class="form-label">Last Name *</label>
+                        <input type="text" class="form-control" id="bookingLastName" required>
+                        <div class="invalid-feedback">Please enter your last name.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="bookingPhone" class="form-label">Mobile Phone *</label>
+                        <input type="tel" class="form-control" id="bookingPhone" required>
+                        <div class="invalid-feedback">Please enter your mobile phone number.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="bookingEmail" class="form-label">Email Address *</label>
+                        <input type="email" class="form-control" id="bookingEmail" required>
+                        <div class="invalid-feedback">Please enter a valid email address.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="bookingPackage" class="form-label">Price Package *</label>
+                        <select class="form-select" id="bookingPackage" required>
+                            <option value="">Select a package...</option>
+                            <option value="wedding">Wedding Photography</option>
+                            <option value="newborn">Newborn Photography</option>
+                            <option value="family">Family Photography</option>
+                            <option value="nature">Nature Photography</option>
+                            <option value="commercial">Commercial Photography</option>
+                        </select>
+                        <div class="invalid-feedback">Please select a price package.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="bookingMessage" class="form-label">Message</label>
+                        <textarea class="form-control" id="bookingMessage" rows="4"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Contact for Booking</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer mt-5">
         <div class="container">
-            <div class="row pt-4 align-items-start">
-                <!-- Navigation -->
-                <div class="col-md-4 mb-4 mb-md-0">
+            <div class="row pt-4">
+                <!-- Logo Section - First on mobile -->
+                <div class="col-12 col-md-4 order-md-2 mb-4">
+                    <img src="dist/images/logo.png" alt="Jo Smith Photography" height="80" class="footer-logo">
+                </div>
+
+                <!-- Navigation - Second on mobile -->
+                <div class="col-12 col-md-4 order-md-1 mb-4">
                     <h5 class="mb-3 dark-colour">Quick Links</h5>
                     <ul class="list-unstyled mb-0">
                         <li class="mb-2"><a href="index.html" class="text-decoration-none dark-colour">Home</a></li>
@@ -312,15 +374,8 @@
                     </ul>
                 </div>
 
-                <!-- Logo Section -->
-                <div class="col-md-4 text-center mb-4 mb-md-0">
-                    <h5 class="mb-3 dark-colour">
-                        <img src="dist/images/logo.png" alt="Jo Smith Photography" height="80">
-                    </h5>
-                </div>
-
-                <!-- Contact Info -->
-                <div class="col-md-4 mb-4 mb-md-0 text-end">
+                <!-- Contact Info - Third on mobile -->
+                <div class="col-12 col-md-4 order-md-3 mb-4">
                     <h5 class="mb-3 dark-colour">Contact</h5>
                     <ul class="list-unstyled mb-0">
                         <li class="mb-2">
@@ -334,12 +389,12 @@
                             </a>
                         </li>
                         <li class="mb-2">
-                            <a href="https://twitter.com/josmithphoto" target="_blank" class="text-decoration-none dark-colour">
+                            <a href="https://twitter.com/josmithphoto" class="text-decoration-none dark-colour" target="_blank">
                                 @josmithphoto <i class="fa-brands fa-x-twitter ms-2"></i>
                             </a>
                         </li>
                         <li class="mb-2">
-                            <a href="https://instagram.com/josmithphoto" target="_blank" class="text-decoration-none dark-colour">
+                            <a href="https://instagram.com/josmithphoto" class="text-decoration-none dark-colour" target="_blank">
                                 @josmithphoto <i class="fa-brands fa-instagram ms-2"></i>
                             </a>
                         </li>
@@ -347,14 +402,10 @@
                 </div>
             </div>
 
-            <!-- Copyright Section -->
-            <div class="border-top">
-                <div class="row">
-                    <div class="col-12 text-center py-2">
-                        <small class="dark-colour">
-                            © 2024 Jo Smith Photography | Website by Angelika Wysocka
-                        </small>
-                    </div>
+            <!-- Copyright -->
+            <div class="row pb-3">
+                <div class="col-12 text-center">
+                    <small class="text-muted">© 2024 Jo Smith Photography | Website by Angelika Wysocka</small>
                 </div>
             </div>
         </div>
@@ -364,6 +415,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>

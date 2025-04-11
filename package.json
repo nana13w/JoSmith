@@ -20,8 +20,7 @@
     "gulp-sass": "^5.1.0",
     "gulp-sourcemaps": "^3.0.0",
     "gulp-terser": "^2.1.0",
-    "gulp-webp": "^4.0.1",
-    "node-sass": "^7.0.3"
+    "gulp-webp": "^4.0.1"
   },
   "dependencies": {
     "ansi-regex": "^5.0.1",
@@ -76,6 +75,7 @@
     "glogg": "^2.2.0",
     "graceful-fs": "^4.2.11",
     "gulp-cli": "^3.0.0",
+    "gulp-sharp-responsive": "^0.4.1",
     "gulplog": "^2.2.0",
     "has-flag": "^4.0.0",
     "hasown": "^2.0.2",
@@ -132,6 +132,7 @@
     "safer-buffer": "^2.1.2",
     "semver": "^6.3.1",
     "semver-greatest-satisfied-range": "^2.0.0",
+    "sharp": "^0.34.1",
     "sparkles": "^2.1.0",
     "stream-composer": "^1.0.2",
     "stream-exhaust": "^1.0.2",
