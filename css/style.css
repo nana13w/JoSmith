@@ -1,11 +1,15 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
+    margin-bottom: 5px;
     padding: 0;
-    padding-bottom: 100px;
-    background-color: #fafafa;
+    padding-bottom: 0;
+    background-color: #fff8fc;
     /* Slightly lighter background color */
     font-family: 'Aria Unicode', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 h1,
@@ -797,4 +801,197 @@ h6 {
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
     background-image: var(--bs-carousel-control-prev-icon-bg);
+}
+
+/* Testimonial Carousel Smooth Transitions */
+.testimonials .carousel {
+    position: relative;
+}
+
+.testimonials .carousel-inner {
+    position: relative;
+    width: 100%;
+}
+
+.testimonials .carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.testimonials .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3rem;
+    position: relative;
+}
+
+.testimonials .quote {
+    font-size: 1.4rem;
+    font-style: italic;
+    line-height: 1.8;
+    position: relative;
+    padding: 2rem;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+}
+
+.testimonials .quote::before {
+    content: '"';
+    font-size: 5rem;
+    position: absolute;
+    left: 0;
+    top: -1rem;
+    color: #2e1223;
+    opacity: 0.2;
+}
+
+.testimonials .quote::after {
+    content: '"';
+    font-size: 5rem;
+    position: absolute;
+    right: 0;
+    bottom: -2rem;
+    color: #2e1223;
+    opacity: 0.2;
+}
+
+.testimonials .attribution {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #2e1223;
+    text-align: right;
+    margin-top: 2rem;
+    padding-right: 2rem;
+}
+
+@media (max-width: 768px) {
+    .testimonials .card {
+        height: 500px;
+    }
+    
+    .testimonials .quote {
+        font-size: 1.2rem;
+        padding: 1.5rem;
+    }
+    
+    .testimonials .attribution {
+        font-size: 1.1rem;
+        margin-top: 1.5rem;
+    }
+}
+
+/* Social Media Icons */
+.fa-x-twitter,
+.fa-instagram {
+    font-size: 1.2rem;
+    margin-right: 5px;
+}
+
+.fa-x-twitter {
+    color: #000;
+}
+
+.fa-instagram {
+    color: #E4405F;
+}
+
+/* Testimonial Cards Height */
+.testimonials .card {
+    height: 500px;
+    margin-bottom: 2rem;
+}
+
+.testimonials .card .row,
+.testimonials .card .col-md-6,
+.testimonials .carousel,
+.testimonials .carousel-inner,
+.testimonials .carousel-item {
+    height: 100%;
+
+}
+
+.testimonials .carousel-item img {
+    height: 500px !important;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.testimonials .card-body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+}
+
+@media (max-width: 768px) {
+    .testimonials .card {
+        height: 400px;
+    }
+    
+    .testimonials .carousel-item img {
+        height: 400px !important;
+    }
+}
+
+/* Footer Styles */
+.footer {
+    margin-top: auto;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.05);
+    background-color: #f6ebf2 !important;
+}
+
+.footer a {
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: #2e1223 !important;
+    opacity: 0.8;
+}
+
+.footer .social-icons a {
+    font-size: 1.2rem;
+    margin-right: 15px;
+}
+
+.footer h5 {
+    font-weight: 600;
+}
+
+.footer .list-unstyled li {
+    transition: transform 0.3s ease;
+}
+
+.footer .list-unstyled li:hover {
+    transform: translateX(5px);
+}
+
+.footer .border-top {
+    border-color: #e0e0e0 !important;
+    margin-bottom: 0;
+}
+
+.footer .copyright {
+    font-size: 0.9rem;
+    color: #2e1223;
+    opacity: 0.9;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+@media (max-width: 768px) {
+    .footer .copyright {
+        font-size: 0.8rem;
+    }
+}
+
+.navbar {
+    background-color: #f6ebf2 !important;
 }

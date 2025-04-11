@@ -1,0 +1,197 @@
+@import 'variables';
+@import 'mixins';
+
+// Base styles
+body {
+    font-family: $font-family-base;
+    margin: 0;
+    margin-bottom: 5px;
+    padding: 0;
+    padding-bottom: 0;
+    background-color: $background-color;
+    min-height: 100vh;
+    @include flex(column);
+}
+
+// Typography
+h1, h2, h3, h4, h5, h6 {
+    font-family: $font-family-headings;
+    color: $text-color !important;
+}
+
+// Navigation
+.navbar {
+    &-nav .nav-link {
+        font-size: $font-size-large;
+        color: $text-color !important;
+    }
+}
+
+.dark-colour {
+    color: $text-color;
+}
+
+// Buttons
+.btn {
+    @include button-base;
+    
+    &-primary {
+        background-color: $primary-color !important;
+        border-color: $primary-color !important;
+    }
+
+    &-outline-secondary {
+        color: $primary-color !important;
+        border-color: $primary-color !important;
+    }
+}
+
+// Carousel
+.carousel {
+    position: relative;
+    overflow: hidden;
+    background-color: #000;
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 50px;
+        z-index: $z-index-carousel;
+        pointer-events: none;
+    }
+
+    &::before {
+        top: 0;
+        background: linear-gradient(to bottom, rgba(0,0,0,0.3), transparent);
+    }
+
+    &::after {
+        bottom: 0;
+        background: linear-gradient(to top, rgba(0,0,0,0.3), transparent);
+    }
+
+    &-inner {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        background-color: #000;
+    }
+
+    &-item {
+        position: relative;
+        display: none;
+        float: left;
+        width: 100%;
+        margin-right: -100%;
+        backface-visibility: hidden;
+        transition: $transition-transform;
+        background-color: #000;
+
+        &.active,
+        &.next,
+        &.prev {
+            display: block;
+            background-color: #000;
+        }
+
+        img {
+            @include image-cover(300px);
+        }
+    }
+}
+
+// Cards
+.card {
+    &-link {
+        display: block;
+        text-decoration: none;
+        color: inherit;
+        height: 100%;
+
+        &:hover {
+            text-decoration: none;
+            color: inherit;
+
+            .card {
+                transform: translateY(-5px);
+                box-shadow: $shadow-hover !important;
+            }
+
+            .card-img-top {
+                transform: scale(1.05);
+            }
+        }
+
+        .card {
+            height: 100%;
+            transition: $transition-base;
+        }
+
+        .card-img-top {
+            @include image-cover;
+        }
+    }
+}
+
+// Gallery
+.gallery-card {
+    @include flex(row, space-between, center);
+    border-radius: $border-radius-base;
+    padding: $spacing-base;
+    background-color: $card-background;
+    border: 1px solid $border-color;
+    box-shadow: $shadow-base;
+    margin-bottom: $spacing-base;
+
+    &:last-child {
+        border-bottom: none;
+    }
+}
+
+// Media Queries
+@include respond-to(sm) {
+    .card-link .card-img-top {
+        height: 350px !important;
+    }
+}
+
+@include respond-to(lg) {
+    .carousel-item img {
+        height: 500px;
+    }
+}
+
+// Footer
+.footer {
+    background-color: $card-background;
+    padding: $spacing-large 0;
+    margin-top: auto;
+
+    a {
+        color: $text-color;
+        text-decoration: none;
+
+        &:hover {
+            color: darken($text-color, 10%);
+        }
+    }
+
+    .social-icons a {
+        margin-right: $spacing-base;
+    }
+
+    h5 {
+        color: $text-color;
+    }
+
+    .list-unstyled li {
+        margin-bottom: $spacing-base;
+
+        &:hover {
+            transform: translateX(5px);
+        }
+    }
+} 

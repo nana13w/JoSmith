@@ -7,6 +7,7 @@ const sourcemaps = require('gulp-sourcemaps');
 const rename = require('gulp-rename');
 const browserSync = require('browser-sync').create();
 const newer = require('gulp-newer');
+const sass = require('gulp-sass')(require('node-sass'));
 
 // Image optimization task
 function optimizeImages() {
@@ -45,6 +46,19 @@ function optimizeImages() {
         .pipe(gulp.dest('dist/images'));
 }
 
+// SCSS compilation task
+function compileSCSS() {
+    return gulp.src('scss/**/*.scss')
+        .pipe(sourcemaps.init())
+        .pipe(sass({
+            outputStyle: 'compressed'
+        }).on('error', sass.logError))
+        .pipe(rename({ suffix: '.min' }))
+        .pipe(sourcemaps.write('./'))
+        .pipe(gulp.dest('dist/css'))
+        .pipe(browserSync.stream());
+}
+
 // CSS optimization task
 function optimizeCSS() {
     return gulp.src('css/**/*.css')
@@ -75,16 +89,18 @@ function watchFiles() {
         }
     });
     gulp.watch('images/**/*', optimizeImages);
+    gulp.watch('scss/**/*.scss', compileSCSS);
     gulp.watch('css/**/*.css', optimizeCSS);
     gulp.watch('js/**/*.js', optimizeJS);
     gulp.watch('*.html').on('change', browserSync.reload);
 }
 
 // Build task
-const build = gulp.series(optimizeImages, optimizeCSS, optimizeJS);
+const build = gulp.series(optimizeImages, compileSCSS, optimizeCSS, optimizeJS);
 
 // Export tasks
 exports.optimizeImages = optimizeImages;
+exports.compileSCSS = compileSCSS;
 exports.optimizeCSS = optimizeCSS;
 exports.optimizeJS = optimizeJS;
 exports.watch = watchFiles;
