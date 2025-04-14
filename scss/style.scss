@@ -1,29 +1,54 @@
 @import 'variables';
 @import 'mixins';
 
+// Variables
+$primary-color: #2e1223;
+$background-color: #f6ebf2;
+$text-color: #333;
+$font-primary: 'Arial Unicode', sans-serif;
+$font-secondary: 'Roboto', sans-serif;
+$transition-speed: 0.3s;
+
+// Mixins
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin hover-effect {
+    transition: all $transition-speed ease;
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+}
+
 // Base styles
 body {
-    font-family: $font-family-base;
+    font-family: $font-primary;
     margin: 0;
-    margin-bottom: 5px;
     padding: 0;
-    padding-bottom: 0;
     background-color: $background-color;
     min-height: 100vh;
-    @include flex(column);
+    display: flex;
+    flex-direction: column;
 }
 
 // Typography
 h1, h2, h3, h4, h5, h6 {
-    font-family: $font-family-headings;
-    color: $text-color !important;
+    font-family: $font-secondary;
+    color: $primary-color !important;
 }
 
 // Navigation
 .navbar {
-    &-nav .nav-link {
-        font-size: $font-size-large;
-        color: $text-color !important;
+    background-color: $background-color !important;
+    border-bottom: 1px solid darken($background-color, 10%);
+    
+    .nav-link {
+        font-size: 1.3em;
+        color: $primary-color !important;
     }
 }
 
@@ -105,33 +130,22 @@ h1, h2, h3, h4, h5, h6 {
 
 // Cards
 .card {
+    @include hover-effect;
+    
     &-link {
-        display: block;
         text-decoration: none;
         color: inherit;
+        display: block;
         height: 100%;
-
-        &:hover {
-            text-decoration: none;
-            color: inherit;
-
-            .card {
-                transform: translateY(-5px);
-                box-shadow: $shadow-hover !important;
-            }
-
-            .card-img-top {
-                transform: scale(1.05);
-            }
-        }
-
-        .card {
-            height: 100%;
-            transition: $transition-base;
-        }
-
+        
         .card-img-top {
-            @include image-cover;
+            height: 350px;
+            object-fit: cover;
+            transition: transform $transition-speed ease;
+        }
+        
+        &:hover .card-img-top {
+            transform: scale(1.05);
         }
     }
 }
@@ -166,16 +180,16 @@ h1, h2, h3, h4, h5, h6 {
 
 // Footer
 .footer {
-    background-color: $card-background;
-    padding: $spacing-large 0;
     margin-top: auto;
-
+    background-color: darken($background-color, 2%);
+    
     a {
-        color: $text-color;
+        color: $primary-color;
         text-decoration: none;
-
+        transition: color $transition-speed ease;
+        
         &:hover {
-            color: darken($text-color, 10%);
+            color: lighten($primary-color, 20%);
         }
     }
 
@@ -193,5 +207,39 @@ h1, h2, h3, h4, h5, h6 {
         &:hover {
             transform: translateX(5px);
         }
+    }
+}
+
+// Modal
+.modal {
+    position: fixed !important;
+    z-index: 9999;
+    bottom: 0 !important;
+    right: 0 !important;
+    width: 300px !important;
+    margin: 20px !important;
+    
+    @media (max-width: 576px) {
+        width: 100% !important;
+    }
+}
+
+// Buttons
+.floating-book-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: $primary-color;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 12px 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    @include hover-effect;
+    
+    i {
+        margin-right: 8px;
     }
 } 

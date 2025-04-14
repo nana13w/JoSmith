@@ -18,6 +18,7 @@
     
     <!-- Non-critical CSS -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body style="background-color: #f6ebf2;">
@@ -25,7 +26,7 @@
         style="background-color: #f6ebf2; border-bottom: 1px solid #e0e0e0;">
         <div class="container">
             <a class="navbar-brand dark-colour" style="margin-left: 45%;" href="#">
-                <img src="dist/images/logo.png" alt="Jo Smith Photography" height="80">
+                <img src="dist/images/logo.svg" alt="Jo Smith Photography" height="80">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
                 aria-controls="offcanvasNavbar">
@@ -372,7 +373,7 @@
             <div class="row pt-4">
                 <!-- Logo Section - First on mobile -->
                 <div class="col-12 col-md-4 order-md-2 mb-4">
-                    <img src="dist/images/logo.png" alt="Jo Smith Photography" height="80" class="footer-logo">
+                    <img src="dist/images/logo.svg" alt="Jo Smith Photography" height="80" class="footer-logo">
                 </div>
 
                 <!-- Navigation - Second on mobile -->
@@ -423,6 +424,24 @@
             </div>
         </div>
     </footer>
+
+    <!-- Image Lightbox -->
+    <div class="lightbox-gallery" id="imageLightbox" tabindex="-1">
+        <div class="lightbox-content">
+            <button type="button" class="lightbox-close" aria-label="Close">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="lightbox-container">
+                <button class="lightbox-nav lightbox-prev" aria-label="Previous">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <img src="" alt="" class="lightbox-image">
+                <button class="lightbox-nav lightbox-next" aria-label="Next">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"

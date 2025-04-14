@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "gulp",
-    "build": "gulp build"
+    "build": "gulp build",
+    "sass": "sass scss/style.scss css/style.css --watch",
+    "build": "sass scss/style.scss css/style.css --style compressed"
   },
   "keywords": [],
   "author": "",
@@ -20,7 +22,8 @@
     "gulp-sass": "^5.1.0",
     "gulp-sourcemaps": "^3.0.0",
     "gulp-terser": "^2.1.0",
-    "gulp-webp": "^4.0.1"
+    "gulp-webp": "^4.0.1",
+    "sass": "^1.69.0"
   },
   "dependencies": {
     "ansi-regex": "^5.0.1",

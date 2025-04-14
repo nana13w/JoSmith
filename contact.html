@@ -18,7 +18,7 @@
         style="background-color: #f6ebf2; border-bottom: 1px solid #e0e0e0;">
         <div class="container">
             <a class="navbar-brand dark-colour" style="margin-left: 45%;" href="#">
-                <img src="dist/images/logo.png" alt="Jo Smith Photography" height="80">
+                <img src="dist/images/logo.svg" alt="Jo Smith Photography" height="80">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
                 aria-controls="offcanvasNavbar">
@@ -102,14 +102,14 @@
                         <label for="phone" class="form-label">Mobile Phone *</label>
                         <input type="tel" class="form-control" id="phone" required>
                         <div class="invalid-feedback">
-                            Please enter your mobile phone number.
+                            Please enter a valid UK mobile phone number (e.g., 07123456789 or +447123456789).
                         </div>
                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label">Email Address *</label>
                         <input type="email" class="form-control" id="email" required>
                         <div class="invalid-feedback">
-                            Please enter a valid email address.
+                            Please enter a valid email address (e.g., name@example.com).
                         </div>
                     </div>
                     <div class="mb-3">
@@ -163,7 +163,8 @@
 
                 <div class="card border-0 shadow-sm">
                     <div class="card-body p-0">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d2236.324164981628!2d-4.3830436232079135!3d55.90907937994347!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e2!4m0!4m5!1s0x48884fa23a5716a3%3A0x5c383a3fdda3a248!2sAbbotshall%20Ave%2C%20Glasgow%20G15%208PR!3m2!1d55.9090764!2d-4.3804687!5e0!3m2!1sen!2suk!4v1744061126206!5m2!1sen!2suk" 
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2198.6761195041437!2d-2.9728887!3d56.4620003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48865c8997ff6667%3A0x608bf372d4f0511e!2s987%20Brook%20St%2C%20Dundee%20DD5%202EA!5e0!3m2!1sen!2suk!4v1708601477510!5m2!1sen!2suk"
                             width="100%" 
                             height="450" 
                             style="border:0;" 
@@ -182,7 +183,7 @@
             <div class="row pt-4">
                 <!-- Logo Section - First on mobile -->
                 <div class="col-12 col-md-4 order-md-2 mb-4">
-                    <img src="dist/images/logo.png" alt="Jo Smith Photography" height="80" class="footer-logo">
+                    <img src="dist/images/logo.svg" alt="Jo Smith Photography" height="80" class="footer-logo">
                 </div>
 
                 <!-- Navigation - Second on mobile -->
@@ -256,12 +257,16 @@
                     <div class="mb-3">
                         <label for="bookingPhone" class="form-label">Mobile Phone *</label>
                         <input type="tel" class="form-control" id="bookingPhone" required>
-                        <div class="invalid-feedback">Please enter your mobile phone number.</div>
+                        <div class="invalid-feedback">
+                            Please enter a valid UK mobile phone number (e.g., 07123456789 or +447123456789).
+                        </div>
                     </div>
                     <div class="mb-3">
                         <label for="bookingEmail" class="form-label">Email Address *</label>
                         <input type="email" class="form-control" id="bookingEmail" required>
-                        <div class="invalid-feedback">Please enter a valid email address.</div>
+                        <div class="invalid-feedback">
+                            Please enter a valid email address (e.g., name@example.com).
+                        </div>
                     </div>
                     <div class="mb-3">
                         <label for="bookingPackage" class="form-label">Price Package *</label>
@@ -285,11 +290,11 @@
         </div>
     </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
-    <script src="js/script.js"></script>
+        crossorigin="anonymous" defer></script>
+    <script src="js/script.js" defer></script>
 </body>
 
 </html>
