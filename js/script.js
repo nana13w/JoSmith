@@ -1,12 +1,26 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const images = document.querySelectorAll('.carousel-item img');
-    images.forEach(img => {
-        const src = img.getAttribute('src');
-        const smallSrc = src.replace(/(\.[a-z]+)$/, '-small$1');
-        if (window.innerWidth < 992) {
-            img.setAttribute('src', smallSrc);
-        }
+    // Initialize all carousels
+    const carousels = document.querySelectorAll('.carousel');
+    carousels.forEach(carousel => {
+        new bootstrap.Carousel(carousel, {
+            interval: 5000,
+            ride: 'carousel',
+            wrap: true
+        });
     });
+
+    // Only load small images on index.html
+    const currentPage = window.location.pathname;
+    if (currentPage.endsWith('index.html') || currentPage === '/' || currentPage === '') {
+        const images = document.querySelectorAll('.carousel-item img');
+        images.forEach(img => {
+            const src = img.getAttribute('src');
+            const smallSrc = src.replace(/(\.[a-z]+)$/, '-small$1');
+            if (window.innerWidth < 992) {
+                img.setAttribute('src', smallSrc);
+            }
+        });
+    }
 
     // Load More functionality for wedding gallery
     const loadMoreBtn = document.getElementById('loadMoreBtn');
@@ -230,57 +244,57 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Lightbox Gallery functionality
     const lightbox = document.getElementById('imageLightbox');
-    const lightboxImage = lightbox.querySelector('.lightbox-image');
-    const closeBtn = lightbox.querySelector('.lightbox-close');
-    const prevBtn = lightbox.querySelector('.lightbox-prev');
-    const nextBtn = lightbox.querySelector('.lightbox-next');
-    let currentImageIndex = 0;
-    let galleryImages = [];
-
-    // Get all gallery images
-    function updateGalleryImages() {
-        galleryImages = Array.from(document.querySelectorAll('.gallery-item:not(.hidden) img'));
-    }
-
-    // Open lightbox
-    function openLightbox(image, index) {
-        updateGalleryImages();
-        currentImageIndex = index;
-        lightboxImage.src = image.src;
-        lightboxImage.alt = image.alt;
-        lightbox.classList.add('show');
-        document.body.style.overflow = 'hidden';
-    }
-
-    // Close lightbox
-    function closeLightbox() {
-        lightbox.classList.remove('show');
-        document.body.style.overflow = '';
-    }
-
-    // Navigate to previous image
-    function showPrevImage() {
-        currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
-        const prevImage = galleryImages[currentImageIndex];
-        lightboxImage.src = prevImage.src;
-        lightboxImage.alt = prevImage.alt;
-    }
-
-    // Navigate to next image
-    function showNextImage() {
-        currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
-        const nextImage = galleryImages[currentImageIndex];
-        lightboxImage.src = nextImage.src;
-        lightboxImage.alt = nextImage.alt;
-    }
-
-    // Add click event listeners to all gallery images
-    document.querySelectorAll('.gallery-item img').forEach((img, index) => {
-        img.addEventListener('click', () => openLightbox(img, index));
-    });
-
-    // Event listeners for lightbox controls
     if (lightbox) {
+        const lightboxImage = lightbox.querySelector('.lightbox-image');
+        const closeBtn = lightbox.querySelector('.lightbox-close');
+        const prevBtn = lightbox.querySelector('.lightbox-prev');
+        const nextBtn = lightbox.querySelector('.lightbox-next');
+        let currentImageIndex = 0;
+        let galleryImages = [];
+
+        // Get all gallery images
+        function updateGalleryImages() {
+            galleryImages = Array.from(document.querySelectorAll('.gallery-item:not(.hidden) img'));
+        }
+
+        // Open lightbox
+        function openLightbox(image, index) {
+            updateGalleryImages();
+            currentImageIndex = index;
+            lightboxImage.src = image.src;
+            lightboxImage.alt = image.alt;
+            lightbox.classList.add('show');
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Close lightbox
+        function closeLightbox() {
+            lightbox.classList.remove('show');
+            document.body.style.overflow = '';
+        }
+
+        // Navigate to previous image
+        function showPrevImage() {
+            currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+            const prevImage = galleryImages[currentImageIndex];
+            lightboxImage.src = prevImage.src;
+            lightboxImage.alt = prevImage.alt;
+        }
+
+        // Navigate to next image
+        function showNextImage() {
+            currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+            const nextImage = galleryImages[currentImageIndex];
+            lightboxImage.src = nextImage.src;
+            lightboxImage.alt = nextImage.alt;
+        }
+
+        // Add click event listeners to all gallery images
+        document.querySelectorAll('.gallery-item img').forEach((img, index) => {
+            img.addEventListener('click', () => openLightbox(img, index));
+        });
+
+        // Event listeners for lightbox controls
         closeBtn.addEventListener('click', closeLightbox);
         prevBtn.addEventListener('click', showPrevImage);
         nextBtn.addEventListener('click', showNextImage);
