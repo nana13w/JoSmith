@@ -1,14 +1,17 @@
 const gulp = require('gulp');
-const sharp = require('sharp');
+const htmlmin = require('gulp-htmlmin');
 const cleanCSS = require('gulp-clean-css');
-const terser = require('gulp-terser');
-const sourcemaps = require('gulp-sourcemaps');
+const uglify = require('gulp-uglify');
+const imagemin = require('gulp-imagemin');
+const del = require('del');
 const rename = require('gulp-rename');
-const browserSync = require('browser-sync').create();
-const newer = require('gulp-newer');
-const sass = require('gulp-sass')(require('node-sass'));
-const fs = require('fs').promises;
-const path = require('path');
+const replace = require('gulp-replace');
+const removeEmptyLines = require('gulp-remove-empty-lines');
+
+// Clean dist directory
+gulp.task('clean', () => {
+    return del(['dist']);
+});
 
 // Image optimization task using sharp
 async function optimizeImages() {
@@ -16,148 +19,102 @@ async function optimizeImages() {
     const outputDir = 'dist/images';
     let processedCount = 0;
     let totalImages = 0;
-
-    // Count total images first
-    async function countImages(dir) {
-        const entries = await fs.readdir(dir, { withFileTypes: true });
-        for (const entry of entries) {
-            if (entry.isDirectory()) {
-                await countImages(path.join(dir, entry.name));
-            } else if (entry.isFile()) {
-                const ext = path.extname(entry.name).toLowerCase();
-                if (['.jpg', '.jpeg', '.png', '.webp'].includes(ext)) {
-                    totalImages++;
-                }
-            }
-        }
-    }
-
-    // Process a single image
-    async function processImage(inputPath, outputPath) {
-        try {
-            const ext = path.extname(inputPath).toLowerCase();
-            
-            // Create output directory if it doesn't exist
-            await fs.mkdir(path.dirname(outputPath), { recursive: true });
-
-            let sharpInstance = sharp(inputPath);
-
-            // Apply different optimizations based on file type
-            if (ext === '.jpg' || ext === '.jpeg') {
-                await sharpInstance
-                    .jpeg({ quality: 80, mozjpeg: true })
-                    .toFile(outputPath);
-            } else if (ext === '.png') {
-                await sharpInstance
-                    .png({ quality: 80, compressionLevel: 9 })
-                    .toFile(outputPath);
-            } else if (ext === '.webp') {
-                await sharpInstance
-                    .webp({ quality: 80 })
-                    .toFile(outputPath);
-            }
-
-            processedCount++;
-            console.log(`Progress: ${processedCount}/${totalImages} - Optimized: ${path.basename(inputPath)}`);
-        } catch (error) {
-            console.error(`Error processing ${inputPath}:`, error);
-        }
-    }
-
-    // Process all images in a directory
-    async function processDirectory(dir) {
-        try {
-            const entries = await fs.readdir(dir, { withFileTypes: true });
-            const optimizationPromises = [];
-
-            for (const entry of entries) {
-                const fullPath = path.join(dir, entry.name);
-                const relativePath = path.relative(inputDir, fullPath);
-                const outputPath = path.join(outputDir, relativePath);
-
-                if (entry.isDirectory()) {
-                    optimizationPromises.push(processDirectory(fullPath));
-                } else if (entry.isFile()) {
-                    const ext = path.extname(entry.name).toLowerCase();
-                    if (['.jpg', '.jpeg', '.png', '.webp'].includes(ext)) {
-                        optimizationPromises.push(processImage(fullPath, outputPath));
-                    }
-                }
-            }
-
-            await Promise.all(optimizationPromises);
-        } catch (error) {
-            console.error(`Error processing directory ${dir}:`, error);
-        }
-    }
-
-    // Start the optimization process
-    console.log('Counting total images...');
-    await countImages(inputDir);
-    console.log(`Found ${totalImages} images to optimize`);
-    
-    console.log('Starting optimization...');
-    await processDirectory(inputDir);
-    console.log('Image optimization complete!');
 }
 
-// SCSS compilation task
-function compileSCSS() {
-    return gulp.src('scss/**/*.scss')
-        .pipe(sourcemaps.init())
-        .pipe(sass({
-            outputStyle: 'compressed'
-        }).on('error', sass.logError))
-        .pipe(rename({ suffix: '.min' }))
-        .pipe(sourcemaps.write('./'))
-        .pipe(gulp.dest('dist/css'))
-        .pipe(browserSync.stream());
-}
+// Optimize HTML
+gulp.task('html', () => {
+    return gulp.src(['*.html'])
+        .pipe(removeEmptyLines())
+        .pipe(htmlmin({
+            collapseWhitespace: true,
+            removeComments: true,
+            minifyCSS: true,
+            minifyJS: true,
+            removeEmptyAttributes: true,
+            removeRedundantAttributes: true,
+            removeScriptTypeAttributes: true,
+            removeStyleLinkTypeAttributes: true
+        }))
+        .pipe(gulp.dest('dist'));
+});
 
-// CSS optimization task
-function optimizeCSS() {
+// Optimize CSS
+gulp.task('css', () => {
     return gulp.src('css/**/*.css')
-        .pipe(newer('dist/css'))
-        .pipe(sourcemaps.init())
-        .pipe(cleanCSS())
+        .pipe(cleanCSS({
+            compatibility: 'ie8',
+            level: {
+                1: {
+                    specialComments: 0,
+                    removeEmpty: true,
+                    removeWhitespace: true
+                },
+                2: {
+                    mergeMedia: true,
+                    removeUnusedAtRules: true,
+                    restructureRules: true
+                }
+            }
+        }))
         .pipe(rename({ suffix: '.min' }))
-        .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest('dist/css'));
-}
+});
 
-// JavaScript optimization task
-function optimizeJS() {
+// Optimize JavaScript
+gulp.task('js', () => {
     return gulp.src('js/**/*.js')
-        .pipe(newer('dist/js'))
-        .pipe(sourcemaps.init())
-        .pipe(terser())
+        .pipe(uglify({
+            compress: {
+                drop_console: true,
+                drop_debugger: true
+            }
+        }))
         .pipe(rename({ suffix: '.min' }))
-        .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest('dist/js'));
-}
+});
+
+// Optimize Images
+gulp.task('images', () => {
+    return gulp.src('images/**/*')
+        .pipe(imagemin([
+            imagemin.gifsicle({ interlaced: true }),
+            imagemin.mozjpeg({ 
+                quality: 75, 
+                progressive: true,
+                fastCrush: true
+            }),
+            imagemin.optipng({ optimizationLevel: 3 }),
+            imagemin.svgo({
+                plugins: [
+                    { removeViewBox: false },
+                    { cleanupIDs: false }
+                ]
+            })
+        ], {
+            verbose: true
+        }))
+        .pipe(gulp.dest('dist/images'));
+});
+
+// Update HTML references to minified files
+gulp.task('update-refs', () => {
+    return gulp.src('dist/*.html')
+        .pipe(replace(/css\/style\.css/g, 'css/style.min.css'))
+        .pipe(replace(/js\/script\.js/g, 'js/script.min.js'))
+        .pipe(gulp.dest('dist'));
+});
+
+// Build task - run tasks in parallel where possible
+gulp.task('build', gulp.series(
+    'clean',
+    gulp.parallel('html', 'css', 'js', 'images'),
+    'update-refs'
+));
 
 // Watch task
-function watchFiles() {
-    browserSync.init({
-        server: {
-            baseDir: "./"
-        }
-    });
-    gulp.watch('images/**/*', optimizeImages);
-    gulp.watch('scss/**/*.scss', compileSCSS);
-    gulp.watch('css/**/*.css', optimizeCSS);
-    gulp.watch('js/**/*.js', optimizeJS);
-    gulp.watch('*.html').on('change', browserSync.reload);
-}
-
-// Build task
-const build = gulp.series(optimizeImages, compileSCSS, optimizeCSS, optimizeJS);
-
-// Export tasks
-exports.optimizeImages = optimizeImages;
-exports.compileSCSS = compileSCSS;
-exports.optimizeCSS = optimizeCSS;
-exports.optimizeJS = optimizeJS;
-exports.watch = watchFiles;
-exports.build = build;
-exports.default = build; 
+gulp.task('watch', () => {
+    gulp.watch('*.html', gulp.series('html', 'update-refs'));
+    gulp.watch('css/**/*.css', gulp.series('css', 'update-refs'));
+    gulp.watch('js/**/*.js', gulp.series('js', 'update-refs'));
+    gulp.watch('images/**/*', gulp.series('images'));
+}); 
