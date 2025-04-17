@@ -597,127 +597,117 @@ h6 {
     width: 100%;
 }
 
+.testimonials .row {
+    display: flex;
+    justify-content: center;
+}
+
+.testimonials .col-12 {
+    max-width: 800px;
+}
+
+.testimonials .card {
+    margin-bottom: 2rem;
+    border-radius: var(--border-radius-base);
+    overflow: hidden;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.testimonials .carousel {
+    width: 100%;
+    height: 400px;
+}
+
+.testimonials .carousel-item {
+    height: 400px;
+}
+
 .testimonials .carousel-item img {
     width: 100%;
-    height: 100% !important;
-    min-height: 400px;
+    height: 100%;
     object-fit: cover;
-    object-position: center;
 }
 
 .testimonials .card-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 3rem;
-    position: relative;
+    padding: 2rem;
+    background-color: var(--card-background);
 }
 
 .testimonials .quote {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-style: italic;
     line-height: 1.6;
-    position: relative;
-    padding: 1.5rem;
-    flex-grow: 1;
-    display: flex;
-    align-items: center;
-}
-
-.testimonials .quote::before {
-    content: '"';
-    font-size: 4rem;
-    position: absolute;
-    left: 0;
-    top: -1rem;
-    color: #2e1223;
-    opacity: 0.2;
-}
-
-.testimonials .quote::after {
-    content: '"';
-    font-size: 4rem;
-    position: absolute;
-    right: 0;
-    bottom: -2rem;
-    color: #2e1223;
-    opacity: 0.2;
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
 }
 
 .testimonials .attribution {
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: bold;
-    color: #2e1223;
+    color: var(--primary-color);
     text-align: right;
-    margin-top: 1.5rem;
-    padding-right: 1.5rem;
+    margin: 0;
 }
 
-@media (max-width: 1200px) {
-    .testimonials .quote {
-        font-size: 1.1rem;
-        padding: 1.3rem;
+@media (min-width: 768px) {
+    .testimonials .carousel,
+    .testimonials .carousel-item {
+        height: 500px;
     }
     
-    .testimonials .quote::before,
-    .testimonials .quote::after {
-        font-size: 3.5rem;
-    }
-    
-    .testimonials .attribution {
-        font-size: 1rem;
+    .testimonials .col-12 {
+        max-width: 700px;
     }
 }
 
-@media (max-width: 992px) {
-    .testimonials .quote {
-        font-size: 1rem;
-        padding: 1.2rem;
+@media (max-width: 767px) {
+    .testimonials .carousel,
+    .testimonials .carousel-item {
+        height: 300px;
     }
-    
-    .testimonials .quote::before,
-    .testimonials .quote::after {
-        font-size: 3rem;
-    }
-    
-    .testimonials .attribution {
-        font-size: 0.9rem;
-    }
-}
 
-@media (max-width: 768px) {
+    .testimonials .col-12 {
+        max-width: 90%;
+    }
+
+    .testimonials .card-body {
+        padding: 1.5rem;
+    }
+
     .testimonials .quote {
         font-size: 0.9rem;
-        padding: 1rem;
         line-height: 1.5;
+        margin-bottom: 1rem;
     }
-    
-    .testimonials .quote::before,
-    .testimonials .quote::after {
-        font-size: 2.5rem;
-    }
-    
+
     .testimonials .attribution {
         font-size: 0.85rem;
-        margin-top: 1.2rem;
     }
 }
 
 @media (max-width: 576px) {
+    .testimonials .carousel,
+    .testimonials .carousel-item {
+        height: 250px;
+    }
+
+    .testimonials .col-12 {
+        max-width: 95%;
+    }
+
+    .testimonials .card-body {
+        padding: 1.25rem;
+    }
+
     .testimonials .quote {
-        font-size: 0.8rem;
-        padding: 0.8rem;
-        line-height: 1.4;
+        font-size: 0.85rem;
+        margin-bottom: 0.75rem;
     }
-    
-    .testimonials .quote::before,
-    .testimonials .quote::after {
-        font-size: 2rem;
-    }
-    
+
     .testimonials .attribution {
-        font-size: 0.75rem;
-        margin-top: 1rem;
+        font-size: 0.8rem;
     }
 }
 
@@ -757,7 +747,7 @@ h6 {
 .testimonials .carousel,
 .testimonials .carousel-inner,
 .testimonials .carousel-item {
-    height: 400px !important;  /* Reduced from 500px */
+    height: 400px;
 }
 
 .testimonials .carousel {
@@ -785,37 +775,62 @@ h6 {
 }
 
 @media (max-width: 768px) {
-    .testimonials .card .row,
-    .testimonials .card .col-md-6,
+    .testimonials .card .row {
+        flex-direction: column;
+    }
+
+    .testimonials .card .col-md-6 {
+        height: auto;
+    }
+
+    .testimonials .card .col-md-6:first-child {
+        height: 400px;
+    }
+
     .testimonials .carousel,
     .testimonials .carousel-inner,
     .testimonials .carousel-item {
-        height: 300px !important;  /* Reduced from 400px */
+        height: 300px;
     }
-    
-    /* On mobile, apply border radius to top corners since image is on top */
-    .testimonials .carousel {
-        border-radius: var(--border-radius-base) var(--border-radius-base) 0 0;
+
+    .testimonials .card-body {
+        padding: 2rem;
+        height: auto;
     }
-    
-    /* Reset the alternating border radius on mobile */
-    .row.g-4 .col-12:nth-child(odd) .carousel,
-    .row.g-4 .col-12:nth-child(even) .carousel {
-        border-radius: var(--border-radius-base) var(--border-radius-base) 0 0;
+
+    .testimonials .quote {
+        font-size: 0.9rem;
+        padding: 1rem;
     }
-    
-    .testimonials .carousel-item img {
-        border-radius: var(--border-radius-base) var(--border-radius-base) 0 0;
+
+    .testimonials .attribution {
+        font-size: 0.85rem;
+        margin-top: 1rem;
     }
 }
 
 @media (max-width: 576px) {
-    .testimonials .card .row,
-    .testimonials .card .col-md-6,
+    .testimonials .card .col-md-6:first-child {
+        height: 250px;
+    }
+
     .testimonials .carousel,
     .testimonials .carousel-inner,
     .testimonials .carousel-item {
-        height: 250px !important;  /* Reduced from 300px */
+        height: 250px;
+    }
+
+    .testimonials .card-body {
+        padding: 1.5rem;
+    }
+
+    .testimonials .quote {
+        font-size: 0.85rem;
+        padding: 0.8rem;
+    }
+
+    .testimonials .attribution {
+        font-size: 0.8rem;
     }
 }
 
@@ -823,10 +838,6 @@ h6 {
     padding: 2rem;  /* Reduced padding */
 }
 
-.testimonials .quote {
-    font-size: 1.1rem;  /* Slightly reduced font size */
-    padding: 1.2rem;  /* Reduced padding */
-}
 
 /* Floating button adjustments */
 .floating-book-btn {
@@ -1703,70 +1714,55 @@ h6 {
     padding: 0;
 }
 
-.gallery-section .card .row,
-.gallery-section .card .col-md-6,
-.gallery-section .carousel,
-.gallery-section .carousel-inner,
-.gallery-section .carousel-item {
-    height: 500px !important;
-}
-
 .gallery-section .carousel {
     border-radius: 0;
     overflow: hidden;
 }
 
-/* Add border radius to the correct side based on card position */
-.gallery-section .row.g-4 .col-12:nth-child(odd) .carousel {
-    border-top-left-radius: var(--border-radius-base);
-    border-bottom-left-radius: var(--border-radius-base);
-}
-
-.gallery-section .row.g-4 .col-12:nth-child(even) .carousel {
-    border-top-right-radius: var(--border-radius-base);
-    border-bottom-right-radius: var(--border-radius-base);
-}
-
 .gallery-section .carousel-item img {
     width: 100%;
-    height: 100% !important;
+    height: 100%;
     object-fit: cover;
-    object-position: center;
-    border-radius: inherit;
+}
+
+.gallery-section .card-body {
+    padding: 2rem;
+    height: auto;
 }
 
 @media (max-width: 768px) {
-    .gallery-section .card .row,
-    .gallery-section .card .col-md-6,
-    .gallery-section .carousel,
-    .gallery-section .carousel-inner,
+    .gallery-section .card .row {
+        flex-direction: column;
+    }
+
+    .gallery-section .card .col-md-6 {
+        width: 100%;
+        height: auto;
+    }
+
+    .gallery-section .carousel {
+        height: 400px !important;
+    }
+
     .gallery-section .carousel-item {
         height: 400px !important;
     }
-    
-    /* On mobile, apply border radius to top corners since image is on top */
-    .gallery-section .carousel {
-        border-radius: var(--border-radius-base) var(--border-radius-base) 0 0;
-    }
-    
-    /* Reset the alternating border radius on mobile */
-    .gallery-section .row.g-4 .col-12:nth-child(odd) .carousel,
-    .gallery-section .row.g-4 .col-12:nth-child(even) .carousel {
-        border-radius: var(--border-radius-base) var(--border-radius-base) 0 0;
-    }
-    
-    .gallery-section .carousel-item img {
-        border-radius: var(--border-radius-base) var(--border-radius-base) 0 0;
+
+    .gallery-section .card-body {
+        padding: 2rem;
+        height: auto;
+        min-height: auto;
     }
 }
 
 @media (max-width: 576px) {
-    .gallery-section .card .row,
-    .gallery-section .card .col-md-6,
     .gallery-section .carousel,
-    .gallery-section .carousel-inner,
     .gallery-section .carousel-item {
         height: 300px !important;
+    }
+
+    .gallery-section .card-body {
+        padding: 1.5rem;
     }
 }
 
@@ -1810,5 +1806,343 @@ h6 {
     border-radius: 0 !important;
 }
 
+/* Modal Styles */
+.booking-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    overflow-y: auto;
+}
 
+.booking-modal.show {
+    display: block;
+}
+
+.booking-modal-content {
+    position: relative;
+    background-color: #fff;
+    margin: 1rem auto;
+    padding: 0;
+    width: 95%;
+    max-width: 450px;
+    max-height: 90vh;
+    overflow-y: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.booking-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #e0e0e0;
+    background-color: #f8f9fa;
+    border-radius: 12px 12px 0 0;
+}
+
+.booking-modal-header h2 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #2e1223;
+    font-weight: 600;
+}
+
+.booking-close-button {
+    background: none;
+    border: none;
+    font-size: 1.25rem;
+    cursor: pointer;
+    color: #666;
+    padding: 0.5rem;
+    transition: color 0.2s ease;
+    line-height: 1;
+}
+
+.booking-close-button:hover {
+    color: #2e1223;
+}
+
+.booking-modal-body {
+    padding: 1rem;
+}
+
+.form-group {
+    margin-bottom: 0.75rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.25rem;
+    color: #333;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+    background-color: #fff;
+    height: 36px;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: #2e1223;
+    box-shadow: 0 0 0 2px rgba(46, 18, 35, 0.1);
+}
+
+textarea.form-control {
+    height: 80px;
+    resize: vertical;
+    min-height: 80px;
+    max-height: 120px;
+}
+
+@media (max-width: 768px) {
+    .booking-modal-content {
+        width: 95%;
+        margin: 1rem auto;
+    }
+
+    .booking-modal-header {
+        padding: 0.75rem 1rem;
+    }
+
+    .booking-modal-body {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .booking-modal-content {
+        width: 95%;
+        margin: 0.5rem auto;
+        border-radius: 12px;
+    }
+
+    .booking-modal-header {
+        padding: 0.75rem 1rem;
+        border-radius: 12px 12px 0 0;
+    }
+
+    .booking-modal-body {
+        padding: 1rem;
+    }
+
+    .form-control {
+        font-size: 16px; /* Prevent zoom on mobile */
+    }
+}
+
+.footer {
+    width: 100%;
+    background-color: var(--background-color);
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.footer .container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.footer .row {
+    justify-content: center;
+}
+
+.footer .col-md-4 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer .footer-logo {
+    margin: 0 auto;
+    display: block;
+}
+
+.footer .list-unstyled {
+    text-align: center;
+}
+
+.footer h5 {
+    text-align: center;
+}
+
+@media (max-width: 1200px) {
+    .footer .container {
+        max-width: 960px;
+    }
+}
+
+@media (max-width: 992px) {
+    .footer .container {
+        max-width: 720px;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer .container {
+        max-width: 540px;
+    }
+}
+
+@media (max-width: 576px) {
+    .footer .container {
+        max-width: 100%;
+        padding: 0 15px;
+    }
+}
+
+/* Testimonial Cards */
+.testimonials .row {
+    display: flex;
+    justify-content: center;
+}
+
+.testimonials .col-md-6 {
+    max-width: 500px;
+}
+
+.testimonials .card {
+    margin-bottom: 2rem;
+    border-radius: var(--border-radius-base);
+    overflow: hidden;
+    height: 100%;
+}
+
+.testimonials .carousel {
+    width: 100%;
+    height: 300px;
+}
+
+.testimonials .carousel-item {
+    height: 300px;
+}
+
+.testimonials .carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.testimonials .card-body {
+    padding: 2rem;
+    background-color: var(--card-background);
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.testimonials .quote {
+    font-size: 1rem;
+    font-style: italic;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
+    flex-grow: 1;
+}
+
+.testimonials .attribution {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    text-align: right;
+    margin: 0;
+}
+
+@media (min-width: 992px) {
+    .testimonials .carousel,
+    .testimonials .carousel-item {
+        height: 350px;
+    }
+    
+    .testimonials .quote {
+        font-size: 1.1rem;
+    }
+    
+    .testimonials .attribution {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 991px) {
+    .testimonials .carousel,
+    .testimonials .carousel-item {
+        height: 300px;
+    }
+}
+
+@media (max-width: 767px) {
+    .testimonials .col-12 {
+        max-width: 90%;
+    }
+
+    .testimonials .carousel,
+    .testimonials .carousel-item {
+        height: 300px;
+    }
+
+    .testimonials .card-body {
+        padding: 1.5rem;
+    }
+
+    .testimonials .quote {
+        font-size: 0.9rem;
+        line-height: 1.5;
+        margin-bottom: 1rem;
+    }
+
+    .testimonials .attribution {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .testimonials .col-12 {
+        max-width: 95%;
+    }
+
+    .testimonials .carousel,
+    .testimonials .carousel-item {
+        height: 250px;
+    }
+
+    .testimonials .card-body {
+        padding: 1.25rem;
+    }
+
+    .testimonials .quote {
+        font-size: 0.85rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .testimonials .attribution {
+        font-size: 0.8rem;
+    }
+}
 

@@ -367,56 +367,59 @@
         Contact for Booking
     </button>
 
-    <!-- Book Session Modal -->
-    <div class="modal" id="bookSessionModal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2>Contact for Booking</h2>
-                <button class="close-button">&times;</button>
-            </div>
-            <div class="modal-body">
-                <form id="bookingForm" class="needs-validation" novalidate>
-                    <div class="mb-3">
-                        <label for="bookingFirstName" class="form-label">First Name *</label>
-                        <input type="text" class="form-control" id="bookingFirstName" required>
-                        <div class="invalid-feedback">Please enter your first name.</div>
-                    </div>
-                    <div class="mb-3">
-                        <label for="bookingLastName" class="form-label">Last Name *</label>
-                        <input type="text" class="form-control" id="bookingLastName" required>
-                        <div class="invalid-feedback">Please enter your last name.</div>
-                    </div>
-                    <div class="mb-3">
-                        <label for="bookingPhone" class="form-label">Mobile Phone *</label>
-                        <input type="tel" class="form-control" id="bookingPhone" required>
-                        <div class="invalid-feedback">Please enter your mobile phone number.</div>
-                    </div>
-                    <div class="mb-3">
-                        <label for="bookingEmail" class="form-label">Email Address *</label>
-                        <input type="email" class="form-control" id="bookingEmail" required>
-                        <div class="invalid-feedback">Please enter a valid email address.</div>
-                    </div>
-                    <div class="mb-3">
-                        <label for="bookingPackage" class="form-label">Price Package *</label>
-                        <select class="form-select" id="bookingPackage" required>
-                            <option value="">Select a package...</option>
-                            <option value="wedding">Wedding Photography</option>
-                            <option value="newborn">Newborn Photography</option>
-                            <option value="family">Family Photography</option>
-                            <option value="nature">Nature Photography</option>
-                            <option value="commercial">Commercial Photography</option>
-                        </select>
-                        <div class="invalid-feedback">Please select a price package.</div>
-                    </div>
-                    <div class="mb-3">
-                        <label for="bookingMessage" class="form-label">Message</label>
-                        <textarea class="form-control" id="bookingMessage" rows="4"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Contact for Booking</button>
-                </form>
-            </div>
+ <!-- Booking Modal -->
+ <div class="booking-modal" id="bookSessionModal">
+    <div class="booking-modal-content">
+        <div class="booking-modal-header">
+            <h2>Contact for Booking</h2>
+            <button class="booking-close-button">&times;</button>
+        </div>
+        <div class="booking-modal-body">
+            <form id="bookingForm">
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" name="name" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="session">Session Type *</label>
+                    <select id="session" name="session" class="form-control" required>
+                        <option value="">Select a session type</option>
+                        <option value="wedding">Wedding Photography</option>
+                        <option value="family">Family Photography</option>
+                        <option value="newborn">Newborn Photography</option>
+                        <option value="nature">Nature Photography</option>
+                        <option value="commercial">Commercial Photography</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="package">Package *</label>
+                    <select id="package" name="package" class="form-control" required>
+                        <option value="">Select a package</option>
+                        <option value="large_print">Photo session with large print (12 x 8") - £80</option>
+                        <option value="extra_large_print">Photo session with extra large print (18 x 12") - £80</option>
+                        <option value="extra_large_print_plus">Photo session with extra large print + 2 large prints - £125</option>
+                        <option value="digital_10">Digital 10 - £190</option>
+                        <option value="digital_25">Digital 25 - £250</option>
+                        <option value="enhance_collection">Enhance Your Collection - Contact for Pricing</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Additional Information</label>
+                    <textarea id="message" name="message" class="form-control" rows="4"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Submit Booking Request</button>
+            </form>
         </div>
     </div>
+</div>
 
     <footer class="footer mt-5">
         <div class="container">

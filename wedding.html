@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <!-- Non-critical CSS -->
@@ -39,13 +39,17 @@
     <nav class="navbar navbar-expand-lg navbar-light dark-colour shadow-sm"
         style="background-color: #f6ebf2; border-bottom: 1px solid #e0e0e0;">
         <div class="container">
-            <a class="navbar-brand dark-colour" style="margin-left: 45%;" href="index.html">
+            <a class="navbar-brand dark-colour" style="margin-left: 43%;" href="#">
                 <img src="dist/images/logo.svg" alt="Jo Smith Photography" height="80" loading="eager">
             </a>
+            
+            <!-- Mobile menu button -->
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
                 aria-controls="offcanvasNavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
+
+            <!-- Desktop Navigation -->
             <div class="collapse navbar-collapse d-none d-lg-flex justify-content-end" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
@@ -176,325 +180,325 @@
                         <img src="dist/images/products/watch.webp" alt="" class="circle-image">
                         <div class="circle-content">
                             <span>Commercial</span>
-                        </div>
+                    </div>
                     </a>
                 </div>
             </div>
-        </div>
+
+                <div class="gallery-grid" id="galleryGrid">
+                    <!-- Row 1 -->
+                    <div class="gallery-item vertical">
+                        <div style="width: 100%; height: 100%; background-color: white;">
+                            <img src="dist/images/wedding/tom-the-photographer-8yPA6ZYq0-s-unsplash.jpg"
+                                alt="Wedding flowers in bridge hands" fetchpriority="high">
+                        </div>
+                    </div>
+                    <div class="gallery-item horizontal">
+                        <div style="width: 100%; height: 100%; background-color: white;">
+                            <img src="dist/images/wedding/wedding.jpg" alt="wedding couple, ballons in the air" fetchpriority="high">
+                        </div>
+                    </div>
+                    <div class="gallery-item horizontal">
+                        <div style="width: 100%; height: 100%; background-color: white;">
+                            <img src="dist/images/wedding/wedding-horizonral.png" alt="Wedding couple kissing" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="gallery-item vertical">
+                        <div style="width: 100%; height: 100%; background-color: white;">
+                            <img src="dist/images/wedding/weding-vertical.png" alt="Wedding couple kissing" loading="lazy">
+                        </div>
+                    </div>
         
-        <div class="gallery-grid" id="galleryGrid">
-            <!-- Row 1 -->
-            <div class="gallery-item vertical">
-                <div style="width: 100%; height: 100%; background-color: white;">
-                    <img src="dist/images/wedding/tom-the-photographer-8yPA6ZYq0-s-unsplash.jpg"
-                        alt="Wedding flowers in bridge hands" fetchpriority="high">
-                </div>
-            </div>
-            <div class="gallery-item horizontal">
-                <div style="width: 100%; height: 100%; background-color: white;">
-                    <img src="dist/images/wedding/wedding.jpg" alt="wedding couple, ballons in the air" fetchpriority="high">
-                </div>
-            </div>
-            <div class="gallery-item horizontal">
-                <div style="width: 100%; height: 100%; background-color: white;">
-                    <img src="dist/images/wedding/wedding-horizonral.webp" alt="Wedding couple kissing" loading="lazy">
-                </div>
-            </div>
-            <div class="gallery-item vertical">
-                <div style="width: 100%; height: 100%; background-color: white;">
-                    <img src="dist/images/wedding/weding-vertical.webp" alt="Wedding couple kissing" loading="lazy">
-                </div>
-            </div>
-
-            <!-- Row 2 -->
-            <div class="gallery-item horizontal">
-                <div style="width: 100%; height: 100%; background-color: white;">
-                    <img src="dist/images/wedding/wedding_couple_looking_right.jpg" alt="Wedding couple looking right" loading="lazy">
-                </div>
-            </div>
-            <div class="gallery-item horizontal">
-                <div style="width: 100%; height: 100%; background-color: white;">
-                    <img src="dist/images/wedding/wedding_chairs.jpg" alt="Wedding chairs" loading="lazy">
-                </div>
-            </div>
-            <div class="gallery-item horizontal">
-                <div style="width: 100%; height: 100%; background-color: white;">
-                    <img src="dist/images/wedding/wedding_cheers.jpg" alt="Wedding couple cheers" loading="lazy">
-                </div>
-            </div>
-
-            <!-- Row 3 -->
-            <div class="gallery-item vertical">
-                <div style="width: 100%; height: 100%; background-color: white;">
-                    <img src="dist/images/wedding/married_couple_kissing.jpg" alt="Married couple kissing" loading="lazy">
-                </div>
-            </div>
-            <div class="gallery-item horizontal">
-                <div style="width: 100%; height: 100%; background-color: white;">
-                    <img src="dist/images/wedding/wedding_coupl_dances.jpg" alt="Wedding couple dances" loading="lazy">
-                </div>
-            </div>
-            <div class="gallery-item horizontal">
-                <div style="width: 100%; height: 100%; background-color: white;">
-                    <img src="dist/images/wedding/putting_a_ring_on_bride_hand.jpg" alt="Putting a ring on bride hand" loading="lazy">
-                </div>
-            </div>
-            <div class="gallery-item vertical">
-                <div style="width: 100%; height: 100%; background-color: white;">
-                    <img src="dist/images/wedding/married_couple_stands_infront_of_castle.jpg" alt="Wedding couple stands infront of castle" loading="lazy">
-                </div>
-            </div>
-
-            <!-- Row 4 -->
-            <div class="gallery-item vertical">
-                <div style="width: 100%; height: 100%; background-color: white;">
-                    <img src="dist/images/wedding/married_couple_holding_hands.jpg" alt="Wedding couple holding hands" loading="lazy">
-                </div>
-            </div>
-            <div class="gallery-item vertical">
-                <div style="width: 100%; height: 100%; background-color: white;">
-                    <img src="dist/images/wedding/married_couple_photoshoot.jpg" alt="Wedding couple photoshoot" loading="lazy">
-                </div>
-            </div>
-            <div class="gallery-item horizontal">
-                <div style="width: 100%; height: 100%; background-color: white;">
-                    <img src="dist/images/wedding/wedding_cake_topper.jpg" alt="Wedding cake topper" loading="lazy">
-                </div>
-            </div>
-            <div class="gallery-item vertical">
-                <div style="width: 100%; height: 100%; background-color: white;">
-                    <img src="dist/images/wedding/husban_kissing_wifes_forhead.jpg" alt="Husban kissing wifes forhead" loading="lazy">
-                </div>
-            </div>
-            <div class="gallery-item vertical">
-                <div style="width: 100%; height: 100%; background-color: white;">
-                    <img src="dist/images/wedding/husband_carring_wife.jpg" alt="Husband carring wife" loading="lazy">
-                </div>
-            </div>
-
-            <!-- Row 5 -->
-            <div class="gallery-item vertical">
-                <div style="width: 100%; height: 100%; background-color: white;">
-                    <img src="dist/images/wedding/wife_standing_on_the_beach.jpg" alt="Wife standing on the beach" loading="lazy">
-                </div>
-            </div>
-            <div class="gallery-item horizontal">
-                <div style="width: 100%; height: 100%; background-color: white;">
-                    <img src="dist/images/wedding/wedding_throughing_rice.jpg" alt="Wedding couple throughing rice" loading="lazy">
-                </div>
-            </div>
-            <div class="gallery-item horizontal">
-                <div style="width: 100%; height: 100%; background-color: white;">
-                    <img src="dist/images/wedding/mr_mrs_sign.jpg" alt="Mr & Mrs sign" loading="lazy">
-                </div>
-            </div>
-            <div class="gallery-item vertical">
-                <div style="width: 100%; height: 100%; background-color: white;">
-                    <img src="dist/images/wedding/wedding_ceremony.jpg" alt="Wedding ceremony" loading="lazy">
-                </div>
-            </div>
-
-            <!-- Row 6 -->
-            <div class="gallery-item horizontal">
-                <div style="width: 100%; height: 100%; background-color: white;">
-                    <img src="dist/images/wedding/bride_mides.jpg" alt="Bridemeids" loading="lazy">
-                </div>
-            </div>
-            <div class="gallery-item horizontal">
-                <div style="width: 100%; height: 100%; background-color: white;">
-                    <img src="dist/images/wedding/rings_inside_rose.jpg" alt="Rings inside rose" loading="lazy">
-                </div>
-            </div>
-            <div class="gallery-item horizontal">
-                <div style="width: 100%; height: 100%; background-color: white;">
-                    <img src="dist/images/wedding/married_couple_on_the_beach.jpg" alt="Married couple on the beach" loading="lazy">
-                </div>
-            </div>
-
-            <!-- Row 7 -->
-            <div class="gallery-item vertical">
-                <div style="width: 100%; height: 100%; background-color: white;">
-                    <img src="dist/images/wedding/wife_standing_in_window.jpg" alt="Bride standing in front of the window" loading="lazy">
-                </div>
-            </div>
-            <div class="gallery-item horizontal">
-                <div style="width: 100%; height: 100%; background-color: white;">
-                    <img src="dist/images/wedding/bride_inside_car.jpg" alt="Bride inside car" loading="lazy">
-                </div>
-            </div>
-            <div class="gallery-item horizontal">
-                <div style="width: 100%; height: 100%; background-color: white;">
-                    <img src="dist/images/wedding/pouring_champane.jpg" alt="Pouring champane" loading="lazy">
-                </div>
-            </div>
-            <div class="gallery-item vertical">
-                <div style="width: 100%; height: 100%; background-color: white;">
-                    <img src="dist/images/wedding/mr_mrs_topper_with_red_roses.jpg" alt="Mr & Mrs topper with red roses" loading="lazy">
-                </div>
-            </div>
-
-            <!-- Row 8 -->
-            <div class="gallery-item vertical">
-                <div style="width: 100%; height: 100%; background-color: white;">
-                    <img src="dist/images/wedding/wife_holding_bouquet.jpg" alt="Wife holding bouquet" loading="lazy">
-                </div>
-            </div>
-            <div class="gallery-item vertical">
-                <div style="width: 100%; height: 100%; background-color: white;">
-                    <img src="dist/images/wedding/wife_putting_white_rose_on_husbands_suit.jpg" alt="Wife putting white rose on husbands suit" loading="lazy">
-                </div>
-            </div>
-            <div class="gallery-item horizontal">
-                <div style="width: 100%; height: 100%; background-color: white;">
-                    <img src="dist/images/wedding/married_couple_in_the_city.jpg" alt="Wedding couple in the city" loading="lazy">
-                </div>
-            </div>
-            <div class="gallery-item vertical">
-                <div style="width: 100%; height: 100%; background-color: white;">
-                    <img src="dist/images/wedding/married_couple_in_sunset.jpg" alt="Wedding couple in sunset" loading="lazy">
-                </div>
-            </div>
-            <div class="gallery-item vertical">
-                <div style="width: 100%; height: 100%; background-color: white;">
-                    <img src="dist/images/wedding/married_couple_covered_by_velon.jpg" alt="Wedding couple covered by velon" loading="lazy">
-                            </div>
+                    <!-- Row 2 -->
+                    <div class="gallery-item horizontal">
+                        <div style="width: 100%; height: 100%; background-color: white;">
+                            <img src="dist/images/wedding/wedding_couple_looking_right.jpg" alt="Wedding couple looking right" loading="lazy">
                         </div>
                     </div>
-        <div class="text-center mt-4">
-            <button id="loadMoreBtn" class="btn btn-outline-dark rounded-pill px-4 py-2">Load More</button>
-                            </div>
+                    <div class="gallery-item horizontal">
+                        <div style="width: 100%; height: 100%; background-color: white;">
+                            <img src="dist/images/wedding/wedding_chairs.jpg" alt="Wedding chairs" loading="lazy">
                         </div>
-
-    <!-- Floating Book Session Button -->
-    <button id="bookSessionTrigger" class="floating-book-btn">
-        <i class="fas fa-camera"></i>
-        Contact for Booking
-    </button>
-
-    <!-- Book Session Modal -->
-    <div class="modal" id="bookSessionModal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 class="modal-title">Contact for Booking</h2>
-                <button type="button" class="close-button">&times;</button>
-            </div>
-            <div class="modal-body">
-                <form id="bookingForm" class="needs-validation" novalidate>
-                    <div class="mb-3">
-                        <label for="bookingFirstName" class="form-label">First Name *</label>
-                        <input type="text" class="form-control" id="bookingFirstName" required>
-                        <div class="invalid-feedback">Please enter your first name.</div>
                     </div>
-                    <div class="mb-3">
-                        <label for="bookingLastName" class="form-label">Last Name *</label>
-                        <input type="text" class="form-control" id="bookingLastName" required>
-                        <div class="invalid-feedback">Please enter your last name.</div>
+                    <div class="gallery-item horizontal">
+                        <div style="width: 100%; height: 100%; background-color: white;">
+                            <img src="dist/images/wedding/wedding_cheers.jpg" alt="Wedding couple cheers" loading="lazy">
+                        </div>
                     </div>
-                    <div class="mb-3">
-                        <label for="bookingPhone" class="form-label">Mobile Phone *</label>
-                        <input type="tel" class="form-control" id="bookingPhone" required>
-                        <div class="invalid-feedback">Please enter your mobile phone number.</div>
+        
+                    <!-- Row 3 -->
+                    <div class="gallery-item vertical">
+                        <div style="width: 100%; height: 100%; background-color: white;">
+                            <img src="dist/images/wedding/married_couple_kissing.jpg" alt="Married couple kissing" loading="lazy">
+                        </div>
                     </div>
-                    <div class="mb-3">
-                        <label for="bookingEmail" class="form-label">Email Address *</label>
-                        <input type="email" class="form-control" id="bookingEmail" required>
-                        <div class="invalid-feedback">Please enter a valid email address.</div>
+                    <div class="gallery-item horizontal">
+                        <div style="width: 100%; height: 100%; background-color: white;">
+                            <img src="dist/images/wedding/wedding_coupl_dances.jpg" alt="Wedding couple dances" loading="lazy">
+                        </div>
                     </div>
-                    <div class="mb-3">
-                        <label for="bookingPackage" class="form-label">Price Package *</label>
-                        <select class="form-select" id="bookingPackage" required>
-                            <option value="">Select a package...</option>
-                            <option value="wedding">Wedding Photography</option>
-                            <option value="newborn">Newborn Photography</option>
-                            <option value="family">Family Photography</option>
-                            <option value="nature">Nature Photography</option>
-                            <option value="commercial">Commercial Photography</option>
-                        </select>
-                        <div class="invalid-feedback">Please select a price package.</div>
+                    <div class="gallery-item horizontal">
+                        <div style="width: 100%; height: 100%; background-color: white;">
+                            <img src="dist/images/wedding/putting_a_ring_on_bride_hand.jpg" alt="Putting a ring on bride hand" loading="lazy">
+                        </div>
                     </div>
-                    <div class="mb-3">
-                        <label for="bookingMessage" class="form-label">Message</label>
-                        <textarea class="form-control" id="bookingMessage" rows="4"></textarea>
+                    <div class="gallery-item vertical">
+                        <div style="width: 100%; height: 100%; background-color: white;">
+                            <img src="dist/images/wedding/married_couple_stands_infront_of_castle.jpg" alt="Wedding couple stands infront of castle" loading="lazy">
+                        </div>
                     </div>
-                    <button type="submit" class="btn btn-primary">Contact for Booking</button>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <footer class="footer mt-5">
-        <div class="container">
-            <div class="row pt-4">
-                <!-- Logo Section - First on mobile -->
-                <div class="col-12 col-md-4 order-md-2 mb-4">
-                    <img src="dist/images/logo.svg" alt="Jo Smith Photography" height="80" class="footer-logo" loading="lazy">
-                </div>
-    
-                <!-- Navigation - Second on mobile -->
-                <div class="col-12 col-md-4 order-md-1 mb-4">
-                    <h5 class="mb-3 dark-colour">Quick Links</h5>
-                    <ul class="list-unstyled mb-0">
-                        <li class="mb-2"><a href="index.html" class="text-decoration-none dark-colour">Home</a></li>
-                        <li class="mb-2"><a href="gallery.html" class="text-decoration-none dark-colour">Gallery</a></li>
-                        <li class="mb-2"><a href="price.html" class="text-decoration-none dark-colour">Prices</a></li>
-                        <li class="mb-2"><a href="contact.html" class="text-decoration-none dark-colour">Contact</a></li>
-                        <li class="mb-2"><a href="testimonials.html" class="text-decoration-none dark-colour">Testimonials</a></li>
-                    </ul>
-                </div>
-                    
-                <!-- Contact Info - Third on mobile -->
-                <div class="col-12 col-md-4 order-md-3 mb-4">
-                    <h5 class="mb-3 dark-colour">Contact</h5>
-                    <ul class="list-unstyled mb-0">
-                        <li class="mb-2">
-                            <a href="mailto:enquire@josmithphoto.com" class="text-decoration-none dark-colour">
-                                enquire@josmithphoto.com <i class="fas fa-envelope ms-2"></i>
-                            </a>
-                        </li>
-                        <li class="mb-2">
-                            <a href="tel:07453585388" class="text-decoration-none dark-colour">
-                                07453 585388 <i class="fas fa-phone ms-2"></i>
-                            </a>
-                        </li>
-                        <li class="mb-2">
-                            <a href="https://twitter.com/josmithphoto" class="text-decoration-none dark-colour" target="_blank">
-                                @josmithphoto <i class="fa-brands fa-x-twitter ms-2"></i>
-                            </a>
-                        </li>
-                        <li class="mb-2">
-                            <a href="https://instagram.com/josmithphoto" class="text-decoration-none dark-colour" target="_blank">
-                                @josmithphoto <i class="fa-brands fa-instagram ms-2"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-                    
-            <!-- Copyright -->
-            <div class="row pb-3">
-                <div class="col-12 text-center">
-                    <small class="text-muted">© 2024 Jo Smith Photography | Website by Angelika Wysocka</small>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Image Lightbox -->
-    <div class="lightbox-gallery" id="imageLightbox" tabindex="-1">
-        <div class="lightbox-content">
-            <button type="button" class="lightbox-close" aria-label="Close">
-                <i class="fas fa-times"></i>
+        
+                    <!-- Row 4 -->
+                    <div class="gallery-item vertical">
+                        <div style="width: 100%; height: 100%; background-color: white;">
+                            <img src="dist/images/wedding/married_couple_holding_hands.jpg" alt="Wedding couple holding hands" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="gallery-item vertical">
+                        <div style="width: 100%; height: 100%; background-color: white;">
+                            <img src="dist/images/wedding/married_couple_photoshoot.jpg" alt="Wedding couple photoshoot" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="gallery-item horizontal">
+                        <div style="width: 100%; height: 100%; background-color: white;">
+                            <img src="dist/images/wedding/wedding_cake_topper.jpg" alt="Wedding cake topper" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="gallery-item vertical">
+                        <div style="width: 100%; height: 100%; background-color: white;">
+                            <img src="dist/images/wedding/husban_kissing_wifes_forhead.jpg" alt="Husban kissing wifes forhead" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="gallery-item vertical">
+                        <div style="width: 100%; height: 100%; background-color: white;">
+                            <img src="dist/images/wedding/husband_carring_wife.jpg" alt="Husband carring wife" loading="lazy">
+                        </div>
+                    </div>
+        
+                    <!-- Row 5 -->
+                    <div class="gallery-item vertical">
+                        <div style="width: 100%; height: 100%; background-color: white;">
+                            <img src="dist/images/wedding/wife_standing_on_the_beach.jpg" alt="Wife standing on the beach" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="gallery-item horizontal">
+                        <div style="width: 100%; height: 100%; background-color: white;">
+                            <img src="dist/images/wedding/wedding_throughing_rice.jpg" alt="Wedding couple throughing rice" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="gallery-item horizontal">
+                        <div style="width: 100%; height: 100%; background-color: white;">
+                            <img src="dist/images/wedding/mr_mrs_sign.jpg" alt="Mr & Mrs sign" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="gallery-item vertical">
+                        <div style="width: 100%; height: 100%; background-color: white;">
+                            <img src="dist/images/wedding/wedding_ceremony.jpg" alt="Wedding ceremony" loading="lazy">
+                        </div>
+                    </div>
+        
+                    <!-- Row 6 -->
+                    <div class="gallery-item horizontal hidden">
+                        <div style="width: 100%; height: 100%; background-color: white;">
+                            <img src="dist/images/wedding/bride_mides.jpg" alt="Bridemeids" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="gallery-item horizontal hidden">
+                        <div style="width: 100%; height: 100%; background-color: white;">
+                            <img src="dist/images/wedding/rings_inside_rose.jpg" alt="Rings inside rose" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="gallery-item horizontal hidden">
+                        <div style="width: 100%; height: 100%; background-color: white;">
+                            <img src="dist/images/wedding/married_couple_on_the_beach.jpg" alt="Married couple on the beach" loading="lazy">
+                        </div>
+                    </div>
+        
+                    <!-- Row 7 -->
+                    <div class="gallery-item vertical hidden">
+                        <div style="width: 100%; height: 100%; background-color: white;">
+                            <img src="dist/images/wedding/wife_standing_in_window.jpg" alt="Bride standing in front of the window" loading="lazy">
+                        </div>
+                            </div>
+                    <div class="gallery-item horizontal hidden">
+                        <div style="width: 100%; height: 100%; background-color: white;">
+                            <img src="dist/images/wedding/bride_inside_car.jpg" alt="Bride inside car" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="gallery-item horizontal hidden">
+                        <div style="width: 100%; height: 100%; background-color: white;">
+                            <img src="dist/images/wedding/pouring_champane.jpg" alt="Pouring champane" loading="lazy">
+                        </div>
+                            </div>
+                    <div class="gallery-item vertical hidden">
+                        <div style="width: 100%; height: 100%; background-color: white;">
+                            <img src="dist/images/wedding/mr_mrs_topper_with_red_roses.jpg" alt="Mr & Mrs topper with red roses" loading="lazy">
+                        </div>
+                    </div>
+        
+                    <!-- Row 8 -->
+                    <div class="gallery-item vertical hidden">
+                        <div style="width: 100%; height: 100%; background-color: white;">
+                            <img src="dist/images/wedding/wife_holding_bouquet.jpg" alt="Wife holding bouquet" loading="lazy">
+                        </div>
+                            </div>
+                    <div class="gallery-item vertical hidden">
+                        <div style="width: 100%; height: 100%; background-color: white;">
+                            <img src="dist/images/wedding/wife_putting_white_rose_on_husbands_suit.jpg" alt="Wife putting white rose on husbands suit" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="gallery-item horizontal hidden">
+                        <div style="width: 100%; height: 100%; background-color: white;">
+                            <img src="dist/images/wedding/married_couple_in_the_city.jpg" alt="Wedding couple in the city" loading="lazy">
+                                    </div>
+                    </div>
+                    <div class="gallery-item vertical hidden">
+                        <div style="width: 100%; height: 100%; background-color: white;">
+                            <img src="dist/images/wedding/married_couple_in_sunset.jpg" alt="Wedding couple in sunset" loading="lazy">
+                                </div>
+                            </div>
+                    <div class="gallery-item vertical hidden">
+                        <div style="width: 100%; height: 100%; background-color: white;">
+                            <img src="dist/images/wedding/married_couple_covered_by_velon.jpg" alt="Wedding couple covered by velon" loading="lazy">
+                                    </div>
+                                </div>
+                            </div>
+                <div class="text-center mt-4">
+                    <button id="loadMoreBtn" class="btn btn-outline-dark rounded-pill px-4 py-2">Load More</button>
+                                    </div>
+                                </div>
+        
+            <!-- Floating Book Session Button -->
+            <button id="bookSessionTrigger" class="floating-book-btn">
+                <i class="fas fa-camera"></i>
+                Contact for Booking
             </button>
-            <div class="lightbox-container">
-                <button class="lightbox-nav lightbox-prev" aria-label="Previous">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <img src="dist/images/wedding/couple_on_mountain_forest_view.jpg" 
-                     alt="Couple on mountain and forest view" 
-                     class="lightbox-image">
-                <button class="lightbox-nav lightbox-next" aria-label="Next">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
+        
+            <!-- Booking Modal -->
+            <div class="booking-modal" id="bookSessionModal">
+                <div class="booking-modal-content">
+                    <div class="booking-modal-header">
+                        <h2>Contact for Booking</h2>
+                        <button class="booking-close-button">&times;</button>
+                    </div>
+                    <div class="booking-modal-body">
+                        <form id="bookingForm">
+                            <div class="form-group">
+                                <label for="name">Full Name *</label>
+                                <input type="text" id="name" name="name" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="session">Session Type *</label>
+                                <select id="session" name="session" class="form-control" required>
+                                    <option value="">Select a session type</option>
+                                    <option value="wedding">Wedding Photography</option>
+                                    <option value="family">Family Photography</option>
+                                    <option value="newborn">Newborn Photography</option>
+                                    <option value="nature">Nature Photography</option>
+                                    <option value="commercial">Commercial Photography</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="package">Package *</label>
+                                <select id="package" name="package" class="form-control" required>
+                                    <option value="">Select a package</option>
+                                    <option value="large_print">Photo session with large print (12 x 8") - £80</option>
+                                    <option value="extra_large_print">Photo session with extra large print (18 x 12") - £80</option>
+                                    <option value="extra_large_print_plus">Photo session with extra large print + 2 large prints - £125</option>
+                                    <option value="digital_10">Digital 10 - £190</option>
+                                    <option value="digital_25">Digital 25 - £250</option>
+                                    <option value="enhance_collection">Enhance Your Collection - Contact for Pricing</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Additional Information</label>
+                                <textarea id="message" name="message" class="form-control" rows="4"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Submit Booking Request</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        
+            <footer class="footer mt-5">
+                <div class="container">
+                    <div class="row pt-4">
+                        <!-- Logo Section - First on mobile -->
+                        <div class="col-12 col-md-4 order-md-2 mb-4">
+                            <img src="dist/images/logo.svg" alt="Jo Smith Photography" height="80" class="footer-logo">
+                        </div>
+            
+                        <!-- Navigation - Second on mobile -->
+                        <div class="col-12 col-md-4 order-md-1 mb-4">
+                            <h5 class="mb-3 dark-colour">Quick Links</h5>
+                            <ul class="list-unstyled mb-0">
+                                <li class="mb-2"><a href="index.html" class="text-decoration-none dark-colour">Home</a></li>
+                                <li class="mb-2"><a href="gallery.html" class="text-decoration-none dark-colour">Gallery</a></li>
+                                <li class="mb-2"><a href="price.html" class="text-decoration-none dark-colour">Prices</a></li>
+                                <li class="mb-2"><a href="contact.html" class="text-decoration-none dark-colour">Contact</a></li>
+                                <li class="mb-2"><a href="testimonials.html" class="text-decoration-none dark-colour">Testimonials</a></li>
+                            </ul>
+                        </div>
+                            
+                        <!-- Contact Info - Third on mobile -->
+                        <div class="col-12 col-md-4 order-md-3 mb-4">
+                            <h5 class="mb-3 dark-colour">Contact</h5>
+                            <ul class="list-unstyled mb-0">
+                                <li class="mb-2">
+                                    <a href="mailto:enquire@josmithphoto.com" class="text-decoration-none dark-colour">
+                                        enquire@josmithphoto.com <i class="fas fa-envelope ms-2"></i>
+                                    </a>
+                                </li>
+                                <li class="mb-2">
+                                    <a href="tel:07453585388" class="text-decoration-none dark-colour">
+                                        07453 585388 <i class="fas fa-phone ms-2"></i>
+                                    </a>
+                                </li>
+                                <li class="mb-2">
+                                    <a href="https://twitter.com/josmithphoto" class="text-decoration-none dark-colour" target="_blank">
+                                        @josmithphoto <i class="fa-brands fa-x-twitter ms-2"></i>
+                                    </a>
+                                </li>
+                                <li class="mb-2">
+                                    <a href="https://instagram.com/josmithphoto" class="text-decoration-none dark-colour" target="_blank">
+                                        @josmithphoto <i class="fa-brands fa-instagram ms-2"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                            
+                    <!-- Copyright -->
+                    <div class="row pb-3">
+                        <div class="col-12 text-center">
+                            <small class="text-muted">© 2024 Jo Smith Photography | Website by Angelika Wysocka</small>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        
+            <!-- Image Lightbox -->
+            <div class="lightbox-gallery" id="imageLightbox" tabindex="-1">
+                <div class="lightbox-content">
+                    <button type="button" class="lightbox-close" aria-label="Close">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <div class="lightbox-container">
+                        <button class="lightbox-nav lightbox-prev" aria-label="Previous">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <img src="" alt="" class="lightbox-image">
+                        <button class="lightbox-nav lightbox-next" aria-label="Next">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
             </div>
         </div>
     </div>
