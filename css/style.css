@@ -2146,3 +2146,43 @@ textarea.form-control {
     }
 }
 
+/* Responsive Carousel Heights */
+@media (max-width: 768px) {
+    .carousel,
+    .carousel-inner,
+    .carousel-item {
+        height: 300px !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .carousel,
+    .carousel-inner,
+    .carousel-item {
+        height: 200px !important;
+    }
+}
+
+@media (max-width: 400px) {
+    .carousel,
+    .carousel-inner,
+    .carousel-item {
+        height: 150px !important;
+    }
+    
+    .carousel-caption h5 {
+        font-size: 0.8rem !important;
+        margin-bottom: 2px !important;
+    }
+    
+    .carousel-caption p {
+        font-size: 0.6rem !important;
+        margin-bottom: 2px !important;
+    }
+    
+    .carousel .btn {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.6rem;
+    }
+}
+
