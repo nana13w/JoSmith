@@ -1973,12 +1973,7 @@ textarea.form-control {
     justify-content: center;
 }
 
-.footer .col-md-4 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
+
 
 .footer .footer-logo {
     margin: 0 auto;
